@@ -10,7 +10,7 @@ import { logoInstagram, logoFacebook, callOutline, timeOutline, lockClosedOutlin
   standalone: true,
   imports: [CommonModule, RouterOutlet, NgOptimizedImage, IonIcon],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss', './helper.scss']
+  styleUrls: ['./header.scss', './app.component.scss', './footer.scss', './helper.scss']
 })
 export class AppComponent {
   title = 'concent-market';
