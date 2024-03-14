@@ -20,6 +20,13 @@ header {
       a {
         padding: 16px 16px;
         display: block;
+        text-decoration: none;
+        ion-icon {
+          margin-right: 8px;
+          position: relative;
+          top: 2px;
+          color: #999999
+        }
         &:hover {
           background-color: #333333;
           color: #ffffff;
