@@ -9,6 +9,9 @@ const _heroPaths: string[] = [
   "/images/IMG_4555.JPG",
 ];
 
+/**
+ * 求人エリアの画像です。
+ */
 const _recruitPaths: string[] = [
   "/images/IMG_5285.jpeg",
   "/images/IMG_1492.JPG",
