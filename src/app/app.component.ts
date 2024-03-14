@@ -11,6 +11,7 @@ import {
   lockClosedOutline,
   mapOutline,
   caretDownOutline,
+  bagOutline,
 } from 'ionicons/icons';
 import { heroPaths, recruitPaths } from '../data/images';
 import { ContactModel, Messages, Recruit } from './types';
@@ -57,13 +58,14 @@ export class AppComponent implements OnInit {
       lockClosedOutline,
       mapOutline,
       caretDownOutline,
+      bagOutline,
     });
   }
 
   ngOnInit() {
     this.readyPrerender({
-      title: 'コンセントマーケット | 西宮・夙川のパン屋さん',
-      description: '西宮・夙川のパン屋さん「コンセントマーケット」。' + shukugawa().title,
+      title: 'コンセントマーケット | 西宮・宝塚のパン屋さん',
+      description: '西宮・宝塚のパン屋さん「コンセントマーケット」。' + shukugawa().title,
       image: this.heroImagePath(),
     });
 

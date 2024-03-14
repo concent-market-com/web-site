@@ -5,16 +5,16 @@
 const _heroPaths: string[] = [
   '/images/IMG_6931.JPG',
   '/images/IMG_9691.JPG',
-  '/images/IMG_4521.JPG',
   '/images/IMG_4555.JPG',
+  '/images/IMG_3653.JPG',
 ];
 
 /**
  * 夙川店の画像です。
  */
 const _shukugawaPaths: string[] = [
-  '/images/IMG_6928.JPG',
-  '/images/IMG_1492.JPG',
+  '/images/IMG_3919.JPG',
+  '/images/31C8080D-48A9-44F9-88F4-2C33EFFFCEDF.jpeg',
   '/images/IMG_5302.jpeg',
   '/images/IMG_6929.JPG',
 ];
@@ -23,10 +23,10 @@ const _shukugawaPaths: string[] = [
  * 宝塚店の画像です。
  */
 const _takarazukaPaths: string[] = [
-  '/images/IMG_6925.JPG',
-  '/images/IMG_1492.JPG',
-  '/images/IMG_5302.jpeg',
-  '/images/IMG_6929.JPG',
+  '/images/IMG_4347.JPG',
+  '/images/IMG_5093.JPG',
+  '/images/IMG_4864.jpeg',
+  '/images/IMG_4868.jpeg',
 ];
 
 /**
@@ -34,9 +34,9 @@ const _takarazukaPaths: string[] = [
  */
 const _recruitPaths: string[] = [
   '/images/IMG_5285.jpeg',
+  '/images/IMG_4378.JPG',
   '/images/IMG_1492.JPG',
   '/images/IMG_5302.jpeg',
-  '/images/IMG_6929.JPG',
 ];
 
 /**
