@@ -12,21 +12,19 @@
 
 <main>
   <section class="section-hero">
-    <img [ngSrc]="heroImagePath()" alt="" width="2400" height="1600" priority decoding="async">
+    <img [src]="heroImagePath()" alt="" decoding="async">
     <ul>
-      <li><button (click)="changeHeroImage('/assets/images/IMG_9691.JPG')"><img ngSrc="/assets/images/IMG_9691.JPG" alt="" width="2400" height="1600" priority decoding="async"></button></li>
+      @for(path of heroImagePaths(); track path) {
+        @if (path !== heroImagePath()) {
+          <li><button (click)="changeHeroImage(path)"><img [src]="path" alt="" decoding="async"></button></li>
+        }
+      }
     </ul>
   </section>
 
   <section class="section-width">
-    <h2>コミュニケーションするパン</h2>
-    <p>コミュニケーションとは「分かち合う」というスペイン語が語源。</p>
-    <p>私たちの経験、つながりからできる精一杯の 気持ちを、「美味しい笑顔」と共に、皆さまと分かち合いたい。 その笑顔は、一つのパン、そして食卓、家庭や私たちの住む町までを、同心円（コンセント）でつなげていく。</p>
-    <p>そのコミュニケーションの真ん中に、「私たちの手のひらから生まれるパン」があることに想いを馳せながら、 今日もパンを焼いていきます。</p>
-
-    <p>「何のためにより良いパンを作ろうとしているのか？」 ということを改めて考えてみました。</p>
-    <p>ただ美味しいパンを作りたい。人を笑顔にしたい。。。 という思いだけで、自分でも驚くほどコツコツと 30年日々失敗と改善を重ねてきたことに気付きました。</p>
-    <p>パンは育てて作るもの。自分の作るパンは、自分そのもの。 いつまでもその時々で最大限のものを生み出し、出会いを求め、 新たな創造を求める場所（店）にしていきたいと考えています。</p>
+    <h2>{{messages().shukigawa.title}}</h2>
+    <div [innerHTML]="messages().shukigawa.lead | toParagraph"></div>
   </section>
 
   <section id="shukugawa" class="store shukugawa">
@@ -38,12 +36,7 @@
       </ul>
 
       <h2>夙川本店</h2>
-
-      <p>日頃からこんな小さいお店にお越しいただきありがとうございます。</p>
-      <p>いつもお客さまを目の前にして 「このパンをどんなシチュエーションで どうやって食べてくれているんだろうか。」 と想像することが好きです。</p>
-      <p>お客さまがSNSで当店をタグ付けしてくださって いるのをいつも楽しく拝見しています。 その中でよく目にするものに、 「明日の朝が楽しみ！」とか「週末のご褒美」とか 「これで1週間仕事乗り切れる」なんてのもあります。</p>
-
-      <p>オープン当初はそんなこと全く考えていなくて「地域の方々にさりげなく寄り添えればいいな」と理想を掲げていました。いつの間にかそれを越えて、楽しみにしてくださってる方にこんなにもたくさん囲まれています。この感謝をどんな風に返していけるだろうかと思います。様々なことが不安定な世の中ですが、「食べる」ことで明日への活力になれるように。毎日の食卓で喜んでいただけるようみんなで考えて進んでいきます。変わらずのご愛顧をよろしくお願いします。</p>
+      <div [innerHTML]="messages().shukigawa.message | toParagraph"></div>
 
       <div class="shop-information">
         <address>
@@ -62,13 +55,12 @@
 
 
   <section class="section-width padding">
-    <h2>さらに「コミュニケーションするパン」</h2>
-    <p>[なぜ宝塚店 to tableをつくったのかの経緯を書いてください]</p>
+    <h2>{{messages().takarazuka.title}}</h2>
+    <div [innerHTML]="messages().takarazuka.lead | toParagraph"></div>
   </section>
 
   <section id="takarazuka" class="store takarazuka">
     <div class="section-width area">
-
       <ul class="sns-buttons">
         <li><a class="instagram" href="https://www.instagram.com/concent.takarazuka/" target="_blank"><ion-icon name="logo-instagram"></ion-icon><span>concent.takarazuka</span></a></li>
         <li><a class="facebook" href="https://www.facebook.com/profile.php?id=100064530558997&fref=ts" target="_blank"><ion-icon name="logo-facebook"></ion-icon><span>コンセントマーケット</span></a></li>
@@ -76,11 +68,7 @@
 
       <h2>宝塚店 to table</h2>
 
-      <p>日頃からこんな小さいお店にお越しいただきありがとうございます。</p>
-      <p>いつもお客さまを目の前にして 「このパンをどんなシチュエーションで どうやって食べてくれているんだろうか。」 と想像することが好きです。</p>
-      <p>お客さまがSNSで当店をタグ付けしてくださって いるのをいつも楽しく拝見しています。 その中でよく目にするものに、 「明日の朝が楽しみ！」とか「週末のご褒美」とか 「これで1週間仕事乗り切れる」なんてのもあります。</p>
-
-      <p>オープン当初はそんなこと全く考えていなくて「地域の方々にさりげなく寄り添えればいいな」と理想を掲げていました。いつの間にかそれを越えて、楽しみにしてくださってる方にこんなにもたくさん囲まれています。この感謝をどんな風に返していけるだろうかと思います。様々なことが不安定な世の中ですが、「食べる」ことで明日への活力になれるように。毎日の食卓で喜んでいただけるようみんなで考えて進んでいきます。変わらずのご愛顧をよろしくお願いします。</p>
+      <div [innerHTML]="messages().takarazuka.message | toParagraph"></div>
 
       <div class="shop-information">
         <address>
@@ -155,48 +143,35 @@
       <div class="copy-right">
         <h2>CONCENT MARKET</h2>
         <table>
+          <tbody>
           <tr><th>運営会社</th><td>株式会社Ｓａｕｄｅ</td></tr>
           <tr><th>代表者名</th><td>岩井 直人</td></tr>
           <tr><th>本店の所在地</th><td>兵庫県西宮市寿町５番１５号</td></tr>
           <tr><th>電話</th><td><a href="tel:0798-23-0707">0798-23-0707</a></td></tr>
+          </tbody>
         </table>
       </div>
     </section>
   </div>
   <section id="recruit" class="section-width recruit">
-    <h3>求人情報</h3>
-    <p>『コミュニケーションするパン』</p>
-    <p>ただおいしいパンをつくりだすだけでなく、想いのあるパンを通して 生まれる人との出会いをコンセントのように 繋げていきたい。</p>
-    <p>入社後はまずきちんと当店を理解していただくためにどのようなパンが 作られどのようなお客様がきてくださってるか、接客の経験をしてもらってから厨房での仕事に移ります。 オーブンや成形、仕込み、色々なポジションを みんなでこまめに回すことで、数年で全ての ポジションをこなせることを目標にしています。 月に一度定休日に出勤があります。 焼き菓子を作ったり、地域とのイベント、教室、研修会など。</p>
-    <p>スタッフ間の大切なコミュニケーションの日でもあり、 またパンの技術だけでなく色んな経験を通して、みんなで一緒に 成長できる機会でありたいと考えています。 夙川本店とtotable(宝塚店)をメンバーが行き来 することで、より技術の向上を目指し、 適材適所のポジションで働くことができます。</p>
-    <p>これから技術を身につけたい未経験の方、また経験者は 製造チーフや店長へステップアップするチャンスもあります。 是非、当店の次なるステップを一緒につくりあげましょう！</p>
+    <h2>求人情報</h2>
+    <div [innerHTML]="recruit().message | toParagraph"></div>
 
     <ul class="recruit-images">
-      <li><img ngSrc="/assets/images/IMG_9691.JPG" alt="" width="2400" height="1600" priority decoding="async"></li>
-      <li><img ngSrc="/assets/images/IMG_9691.JPG" alt="" width="2400" height="1600" priority decoding="async"></li>
-      <li><img ngSrc="/assets/images/IMG_9691.JPG" alt="" width="2400" height="1600" priority decoding="async"></li>
-      <li><img ngSrc="/assets/images/IMG_9691.JPG" alt="" width="2400" height="1600" priority decoding="async"></li>
+      @for(path of recruitPaths(); track path) {
+        <li><img [src]="path" alt="" decoding="async"></li>
+      }
     </ul>
 
-    <h4>パート・アルバイト</h4>
-    <table>
-      <tr><th>職種</th><td>販売スタッフ / 道路整理スタッフ</td></tr>
-      <tr><th>勤務地</th><td>夙川本店 / 宝塚店 to table</td></tr>
-      <tr><th>給与</th><td>時給 1,000円〜</td></tr>
-      <tr><th>勤務時間</th><td>8:00〜19:00のうち、4～8時間程度</td></tr>
-      <tr><th>待遇</th><td>交通費支給、制服貸与</td></tr>
-      <tr><th>応募方法</th><td>お電話または上記メールフォームからご連絡ください。</td></tr>
-    </table>
-
-    <h4>製造正社員</h4>
-    <table>
-      <tr><th>職種</th><td>製造正社員</td></tr>
-      <tr><th>勤務地</th><td>夙川本店 / 宝塚店 to table</td></tr>
-      <tr><th>給与</th><td>月給 200,000円から（チーフ/25万円～30万円  店長/30万円～40万円）</td></tr>
-      <tr><th>休日</th><td>月7回　定休日月曜、火曜 (月に一度、焼き菓子の製造やイベント、教室、見学会などの研修あり)</td></tr>
-      <tr><th>勤務時間</th><td>時間：6:00～17:30　※シフト制　※休憩あり</td></tr>
-      <tr><th>待遇</th><td>各種社会保険完備、役職手当、残業手当、交通費全額支給、制服貸与、社員割引</td></tr>
-      <tr><th>応募方法</th><td>お電話または上記メールフォームからご連絡ください。</td></tr>
-    </table>
+    @for (recruit of recruit().recruit; track recruit.type) {
+      <h4>{{recruit.type}}</h4>
+      <table>
+        <tbody>
+        @for (item of recruit.items; track item.key) {
+          <tr><th>{{item.key}}</th><td>{{item.value}}</td></tr>
+        }
+        </tbody>
+      </table>
+    }
   </section>
 </footer>
