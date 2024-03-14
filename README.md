@@ -1,27 +1,30 @@
-# ConcentMarket
+# 西宮・夙川のパン屋さん「コンセントマーケット」
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+## 更新用リンク
 
-## Development server
+| 項目     | ファイル                                                                        |
+| -------- | ------------------------------------------------------------------------------- |
+| 夙川本店 | https://github.com/concent-market-com/web-site/edit/main/src/data/shukugawa.ts  |
+| 宝塚店   | https://github.com/concent-market-com/web-site/edit/main/src/data/takarazuka.ts |
+| 求人     | https://github.com/concent-market-com/web-site/edit/main/src/data/recruit.ts    |
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 画像を更新する方法
 
-## Code scaffolding
+1. 画像を用意します。
+2. 画像ファイル名に日本語が使われている場合、英数字のファイル名に変更します
+3. https://github.com/concent-market-com/web-site/tree/main/src/assets/images にアクセスして、右上の `Add file` > `Upload files` からファイルをアップロードしてコミットします。
+4. URLは、 `/images/` + ファイル名となります。例えば `104380ga10000003.jpg` というファイルをアップロードした場合、 `/images/104380ga10000003.jpg` を https://github.com/concent-market-com/web-site/edit/main/src/data/images.ts の該当するところに記述ください。
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```diff
+  const _heroPaths: string[] = [
+    '/images/IMG_6931.JPG',
+    '/images/IMG_9691.JPG',
+    '/images/IMG_4521.JPG',
+-   '/images/IMG_4555.JPG',
++   '/images/104380ga10000003.jpg',
+  ];
+```
 
-## Build
+### 更新に失敗した
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ビルドに必要な情報を間違って削除してしまったり、フォーマットを変更してしまった時、Webサイトには反映されずに更新できなかったという通知が更新を行ったユーザのメールアドレスにいきます。更新後に反映されなかった場合は、メールをご確認ください。

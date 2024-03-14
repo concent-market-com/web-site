@@ -1,7 +1,7 @@
 import { Message } from '../app/types';
 
 /**
- * 夙川本店に関するライティングです
+ * 宝塚店に関するライティングです
  */
 export const takarazuka = (): Message => ({
   title: `さらに「コミュニケーションするパン」`,
