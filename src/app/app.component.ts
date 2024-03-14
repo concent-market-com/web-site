@@ -5,7 +5,7 @@ import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoInstagram, logoFacebook, callOutline, timeOutline, lockClosedOutline, mapOutline, caretDownOutline } from 'ionicons/icons';
 import {heroPaths, recruitPaths} from '../data/images';
-import {ContactModel, Message, Messages, Recruit} from './types';
+import {ContactModel, Messages, Recruit} from './types';
 import {shukugawa} from '../data/shukugawa';
 import {takarazuka} from '../data/takarazuka';
 import {ToParagraphPipe} from './to-paragraph.pipe';
@@ -14,7 +14,6 @@ import {Meta} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {firstValueFrom} from 'rxjs';
-import {LoadingController} from '@ionic/angular';
 import {defaultContactModel} from './constant';
 
 @Component({

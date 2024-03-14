@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true
 })
 export class ToParagraphPipe implements PipeTransform {
-  transform(value: string, ...args: unknown[]): string {
+  transform(value: string): string {
     return value.split(/\n/).map((line) => `<p>${line}</p>`).join('');
   }
 }

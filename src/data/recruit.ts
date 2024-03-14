@@ -1,4 +1,4 @@
-import {Message, Recruit} from '../app/types';
+import {Recruit} from '../app/types';
 
 /**
  * 求人に関するライティングです
