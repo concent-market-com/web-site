@@ -1,4 +1,4 @@
-import {Message} from '../app/types';
+import { Message } from '../app/types';
 
 /**
  * 夙川本店に関するライティングです
@@ -10,5 +10,5 @@ export const takarazuka = (): Message => ({
       `,
   message: `
 [店舗からのメッセージを書いてください]
-    `
-})
+    `,
+});

@@ -1,30 +1,30 @@
-import {Component, inject, OnInit, signal} from '@angular/core';
-import {CommonModule, DOCUMENT, NgOptimizedImage} from '@angular/common';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { CommonModule, DOCUMENT, NgOptimizedImage } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoInstagram, logoFacebook, callOutline, timeOutline, lockClosedOutline, mapOutline, caretDownOutline } from 'ionicons/icons';
-import {heroPaths, recruitPaths} from '../data/images';
-import {ContactModel, Messages, Recruit} from './types';
-import {shukugawa} from '../data/shukugawa';
-import {takarazuka} from '../data/takarazuka';
-import {ToParagraphPipe} from './to-paragraph.pipe';
-import {recruit} from '../data/recruit';
-import {Meta} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
-import {firstValueFrom} from 'rxjs';
-import {defaultContactModel} from './constant';
+import { heroPaths, recruitPaths } from '../data/images';
+import { ContactModel, Messages, Recruit } from './types';
+import { shukugawa } from '../data/shukugawa';
+import { takarazuka } from '../data/takarazuka';
+import { ToParagraphPipe } from './to-paragraph.pipe';
+import { recruit } from '../data/recruit';
+import { Meta } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
+import { defaultContactModel } from './constant';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, NgOptimizedImage, IonIcon, ToParagraphPipe, FormsModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./header.scss', './app.component.scss', './footer.scss', './helper.scss']
+  styleUrls: ['./header.scss', './app.component.scss', './footer.scss', './helper.scss'],
 })
 export class AppComponent implements OnInit {
-  private document = inject(DOCUMENT)
+  private document = inject(DOCUMENT);
   private meta = inject(Meta);
   private http = inject(HttpClient);
 
@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
   isSend = signal<boolean>(false);
 
   constructor() {
-    addIcons({logoInstagram, logoFacebook, callOutline, timeOutline, lockClosedOutline, mapOutline, caretDownOutline});
+    addIcons({ logoInstagram, logoFacebook, callOutline, timeOutline, lockClosedOutline, mapOutline, caretDownOutline });
   }
 
   ngOnInit() {
@@ -53,19 +53,19 @@ export class AppComponent implements OnInit {
 
     const scorrllLinks = this.document.querySelectorAll('a[href^="#"]');
     scorrllLinks.forEach((scorrllLink) => {
-      scorrllLink.addEventListener("click", (e) => {
+      scorrllLink.addEventListener('click', (e) => {
         if (window === undefined) {
           return;
         }
         e.preventDefault();
-        const hrefLink = scorrllLink.getAttribute("href")!;
-        const targetContent = this.document.getElementById(hrefLink.replace("#", ""));
+        const hrefLink = scorrllLink.getAttribute('href')!;
+        const targetContent = this.document.getElementById(hrefLink.replace('#', ''));
         const rectTop = targetContent!.getBoundingClientRect().top;
         const positionY = window.scrollY;
         const target = rectTop + positionY;
         window.scrollTo({
           top: target,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       });
     });
@@ -73,11 +73,13 @@ export class AppComponent implements OnInit {
 
   async send() {
     const preMessage = this.contactModel.tel ? `電話番号： ${this.contactModel.tel}\r\n\r\n` : '';
-    const result = await firstValueFrom(this.http.post('https://api.v5.tipsys.me/thirdparty/concent/mail', {
-      from: this.contactModel.email,
-      name: this.contactModel.name,
-      message: preMessage + this.contactModel.message,
-    }))
+    const result = await firstValueFrom(
+      this.http.post('https://api.v5.tipsys.me/thirdparty/concent/mail', {
+        from: this.contactModel.email,
+        name: this.contactModel.name,
+        message: preMessage + this.contactModel.message,
+      }),
+    )
       .then(() => true)
       .catch(() => false);
 

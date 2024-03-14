@@ -1,38 +1,55 @@
 <header>
   <h1>
-    <img ngSrc="../assets/logo.jpeg" alt="コンセントマーケット" width="770" height="212" priority decoding="async">
+    <img ngSrc="../assets/logo.jpeg" alt="コンセントマーケット" width="770" height="212" priority decoding="async" />
   </h1>
   <ul>
-    <li><a href="#shukugawa"><ion-icon name="caret-down-outline"></ion-icon>夙川本店</a></li>
-    <li><a href="#takarazuka"><ion-icon name="caret-down-outline"></ion-icon>宝塚店 to table</a></li>
-    <li><a href="#contact"><ion-icon name="caret-down-outline"></ion-icon>お問い合わせ</a></li>
-    <li><a href="#recruit"><ion-icon name="caret-down-outline"></ion-icon>求人情報</a></li>
+    <li>
+      <a href="#shukugawa"><ion-icon name="caret-down-outline"></ion-icon>夙川本店</a>
+    </li>
+    <li>
+      <a href="#takarazuka"><ion-icon name="caret-down-outline"></ion-icon>宝塚店 to table</a>
+    </li>
+    <li>
+      <a href="#contact"><ion-icon name="caret-down-outline"></ion-icon>お問い合わせ</a>
+    </li>
+    <li>
+      <a href="#recruit"><ion-icon name="caret-down-outline"></ion-icon>求人情報</a>
+    </li>
   </ul>
 </header>
 
 <main>
   <section class="section-hero">
-    <img [src]="heroImagePath()" alt="" decoding="async">
+    <img [src]="heroImagePath()" alt="" decoding="async" />
     <ul>
-      @for(path of heroImagePaths(); track path) {
+      @for (path of heroImagePaths(); track path) {
         @if (path !== heroImagePath()) {
-          <li><button (click)="changeHeroImage(path)"><img [src]="path" alt="" decoding="async"></button></li>
+          <li>
+            <button (click)="changeHeroImage(path)"><img [src]="path" alt="" decoding="async" /></button>
+          </li>
         }
       }
     </ul>
   </section>
 
   <section class="section-width">
-    <h2>{{messages().shukigawa.title}}</h2>
+    <h2>{{ messages().shukigawa.title }}</h2>
     <div [innerHTML]="messages().shukigawa.lead | toParagraph"></div>
   </section>
 
   <section id="shukugawa" class="store shukugawa">
     <div class="section-width area">
-
       <ul class="sns-buttons">
-        <li><a href="https://www.instagram.com/concentmarket/" class="instagram" target="_blank"><ion-icon name="logo-instagram"></ion-icon><span>concentmarket</span></a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=100064530558997&fref=ts" class="facebook" target="_blank"><ion-icon name="logo-facebook"></ion-icon><span>コンセントマーケット</span></a></li>
+        <li>
+          <a href="https://www.instagram.com/concentmarket/" class="instagram" target="_blank"
+            ><ion-icon name="logo-instagram"></ion-icon><span>concentmarket</span></a
+          >
+        </li>
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=100064530558997&fref=ts" class="facebook" target="_blank"
+            ><ion-icon name="logo-facebook"></ion-icon><span>コンセントマーケット</span></a
+          >
+        </li>
       </ul>
 
       <h2>夙川本店</h2>
@@ -48,22 +65,37 @@
             <li><ion-icon name="map-outline"></ion-icon>アクセス　阪急「夙川」駅から徒歩3分</li>
           </ul>
         </address>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13114.252391262242!2d135.3288101!3d34.7414056!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f2fb6a4259ed%3A0xe57628dbee364609!2z44Kz44Oz44K744Oz44OI44Oe44O844Kx44OD44OI!5e0!3m2!1sja!2sjp!4v1710407573744!5m2!1sja!2sjp" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13114.252391262242!2d135.3288101!3d34.7414056!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f2fb6a4259ed%3A0xe57628dbee364609!2z44Kz44Oz44K744Oz44OI44Oe44O844Kx44OD44OI!5e0!3m2!1sja!2sjp!4v1710407573744!5m2!1sja!2sjp"
+          width="100%"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   </section>
 
-
   <section class="section-width padding">
-    <h2>{{messages().takarazuka.title}}</h2>
+    <h2>{{ messages().takarazuka.title }}</h2>
     <div [innerHTML]="messages().takarazuka.lead | toParagraph"></div>
   </section>
 
   <section id="takarazuka" class="store takarazuka">
     <div class="section-width area">
       <ul class="sns-buttons">
-        <li><a class="instagram" href="https://www.instagram.com/concent.takarazuka/" target="_blank"><ion-icon name="logo-instagram"></ion-icon><span>concent.takarazuka</span></a></li>
-        <li><a class="facebook" href="https://www.facebook.com/profile.php?id=100064530558997&fref=ts" target="_blank"><ion-icon name="logo-facebook"></ion-icon><span>コンセントマーケット</span></a></li>
+        <li>
+          <a class="instagram" href="https://www.instagram.com/concent.takarazuka/" target="_blank"
+            ><ion-icon name="logo-instagram"></ion-icon><span>concent.takarazuka</span></a
+          >
+        </li>
+        <li>
+          <a class="facebook" href="https://www.facebook.com/profile.php?id=100064530558997&fref=ts" target="_blank"
+            ><ion-icon name="logo-facebook"></ion-icon><span>コンセントマーケット</span></a
+          >
+        </li>
       </ul>
 
       <h2>宝塚店 to table</h2>
@@ -80,7 +112,15 @@
             <li><ion-icon name="map-outline"></ion-icon>アクセス　阪急「宝塚」駅から徒歩12分、JR「宝塚」駅から徒歩12分</li>
           </ul>
         </address>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104919.25469287252!2d135.25545268922568!3d34.73728247055225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f5368e8f67a7%3A0xf019104b7994a4aa!2sCONCENT%20MARKET%20to%20table!5e0!3m2!1sja!2sjp!4v1710408385243!5m2!1sja!2sjp" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104919.25469287252!2d135.25545268922568!3d34.73728247055225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f5368e8f67a7%3A0xf019104b7994a4aa!2sCONCENT%20MARKET%20to%20table!5e0!3m2!1sja!2sjp!4v1710408385243!5m2!1sja!2sjp"
+          width="100%"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   </section>
@@ -89,22 +129,27 @@
     <h2>お問い合わせ</h2>
     @if (isSend()) {
       <p>問い合わせの送信が完了しました。</p>
-      <p>お申し出に対しては順次対応させていただいておりますが、受付時間外に送信いただいたものや、内容によりましてはお返事にお時間を頂戴する場合がございます。また、ご入力いただいたEメールアドレスや電話番号が誤っている場合やシステム障害が発生した場合等には回答ができない場合がございます。一週間以上経っても回答未着の場合、お手数ですが再度お問い合わせいただけると幸いです。</p>
+      <p>
+        お申し出に対しては順次対応させていただいておりますが、受付時間外に送信いただいたものや、内容によりましてはお返事にお時間を頂戴する場合がございます。また、ご入力いただいたEメールアドレスや電話番号が誤っている場合やシステム障害が発生した場合等には回答ができない場合がございます。一週間以上経っても回答未着の場合、お手数ですが再度お問い合わせいただけると幸いです。
+      </p>
 
       <p class="text-center">
         <button (click)="isSend.set(false)" class="submitButton">別のメッセージを送信する</button>
       </p>
-
     } @else {
       <ul>
         <li>夙川本店、宝塚店 to tableへのお問い合わせはどちらもこちらのフォームから受け付けております。</li>
-        <li>お申し出に対しては順次対応させていただいておりますが、受付時間外に送信いただいたものや、内容によりましてはお返事にお時間を頂戴する場合がございます。</li>
-        <li>ご入力いただいたEメールアドレスや電話番号が誤っている場合やシステム障害が発生した場合等には回答ができない場合がございます。一週間以上経っても回答未着の場合、お手数ですがお電話ください。</li>
+        <li>
+          お申し出に対しては順次対応させていただいておりますが、受付時間外に送信いただいたものや、内容によりましてはお返事にお時間を頂戴する場合がございます。
+        </li>
+        <li>
+          ご入力いただいたEメールアドレスや電話番号が誤っている場合やシステム障害が発生した場合等には回答ができない場合がございます。一週間以上経っても回答未着の場合、お手数ですがお電話ください。
+        </li>
       </ul>
       <form (submit)="send()">
         <div class="form-line">
           <label for="name"><span class="form-label required">必須</span>お名前</label>
-          <input id="name" type="text" name="name" [(ngModel)]="contactModel.name" required placeholder="例）山田太郎">
+          <input id="name" type="text" name="name" [(ngModel)]="contactModel.name" required placeholder="例）山田太郎" />
         </div>
         <div class="form-line">
           <label for="mail"><span class="form-label required">必須</span>メールアドレス（半角）</label>
@@ -159,10 +204,22 @@
         <h2>CONCENT MARKET</h2>
         <table>
           <tbody>
-          <tr><th>運営会社</th><td>株式会社Ｓａｕｄｅ</td></tr>
-          <tr><th>代表者名</th><td>岩井 直人</td></tr>
-          <tr><th>本店の所在地</th><td>兵庫県西宮市寿町５番１５号</td></tr>
-          <tr><th>電話</th><td><a href="tel:0798-23-0707">0798-23-0707</a></td></tr>
+            <tr>
+              <th>運営会社</th>
+              <td>株式会社Ｓａｕｄｅ</td>
+            </tr>
+            <tr>
+              <th>代表者名</th>
+              <td>岩井 直人</td>
+            </tr>
+            <tr>
+              <th>本店の所在地</th>
+              <td>兵庫県西宮市寿町５番１５号</td>
+            </tr>
+            <tr>
+              <th>電話</th>
+              <td><a href="tel:0798-23-0707">0798-23-0707</a></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -173,18 +230,21 @@
     <div [innerHTML]="recruit().message | toParagraph"></div>
 
     <ul class="recruit-images">
-      @for(path of recruitPaths(); track path) {
-        <li><img [src]="path" alt="" decoding="async"></li>
+      @for (path of recruitPaths(); track path) {
+        <li><img [src]="path" alt="" decoding="async" /></li>
       }
     </ul>
 
     @for (recruit of recruit().recruit; track recruit.type) {
-      <h4>{{recruit.type}}</h4>
+      <h4>{{ recruit.type }}</h4>
       <table>
         <tbody>
-        @for (item of recruit.items; track item.key) {
-          <tr><th>{{item.key}}</th><td>{{item.value}}</td></tr>
-        }
+          @for (item of recruit.items; track item.key) {
+            <tr>
+              <th>{{ item.key }}</th>
+              <td>{{ item.value }}</td>
+            </tr>
+          }
         </tbody>
       </table>
     }
