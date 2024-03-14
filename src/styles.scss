@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./reset.scss";
+
+body {
+  margin: 0;
+  color: #333333;
+}

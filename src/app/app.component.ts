@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, signal} from '@angular/core';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, NgOptimizedImage],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'concent-market';
+  heroImagePath = signal('/assets/images/IMG_6931.JPG');
+
+  changeHeroImage(path: string) {
+    this.heroImagePath = signal(path);
+  }
 }
