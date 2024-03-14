@@ -188,3 +188,19 @@
     }
   }
 }
+
+.contact {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 16px 16px 0;
+    li {
+      border-bottom: 1px solid #333333;
+      padding: 8px 0;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
