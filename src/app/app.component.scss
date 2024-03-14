@@ -21,7 +21,7 @@
       height: 80px;
       overflow: hidden;
 
-      button{
+      button {
         background-color: transparent;
         border: none;
         cursor: pointer;
@@ -102,7 +102,7 @@
   &::after {
     content: '';
     position: absolute;
-    left:0;
+    left: 0;
     top: 0;
     z-index: 0;
     width: 100%;
@@ -127,7 +127,7 @@
 
   .section-width {
     border-radius: 16px;
-    background-color: rgba(255,255,255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     margin-bottom: calc(16px * 8);
   }
 }
@@ -157,10 +157,12 @@
       padding: 0;
       margin: 0;
       li {
+        position: relative;
+        padding-left: 20px;
         ion-icon {
-          margin-right: 8px;
-          position: relative;
+          position: absolute;
           top: 2px;
+          left: -8px;
         }
         margin: 0 0 8px;
       }
@@ -173,7 +175,6 @@
       width: 100%;
     }
     address {
-      border-left: 2px solid #333333;
       padding: 2px 16px;
       border-right: none;
       margin-right: 0;
