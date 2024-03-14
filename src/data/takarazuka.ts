@@ -1,4 +1,4 @@
-import {Message} from './types';
+import {Message} from '../app/types';
 
 /**
  * 夙川本店に関するライティングです
