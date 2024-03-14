@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const scorrllLinks = document.querySelectorAll('a[href^="#"]');
+    const scorrllLinks = this.document.querySelectorAll('a[href^="#"]');
     scorrllLinks.forEach((scorrllLink) => {
       scorrllLink.addEventListener("click", (e) => {
         if (window === undefined) {
