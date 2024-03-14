@@ -13,10 +13,39 @@ header {
   ul {
     display: flex;
     list-style: none;
-    padding: 16px 0 0;
+    padding: 0;
+    margin-bottom: 0;
     border-top: 2px solid #333333;
     li {
-      margin: 0 16px;
+      a {
+        padding: 16px 16px;
+        display: block;
+        &:hover {
+          background-color: #333333;
+          color: #ffffff;
+        }
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      flex-wrap: wrap;
+      li {
+        width: 50%;
+        margin: 0;
+        text-align: center;
+        border-bottom: 2px solid #333333;
+
+        &:nth-child(odd) {
+          border-right: 1px solid #333333;
+        }
+
+        a {
+          &:hover {
+            background-color: #333333;
+            color: #ffffff;
+          }
+        }
+      }
     }
   }
 }
@@ -117,10 +146,6 @@ header {
       border-radius: 3px;
       position: relative;
       top: -1px;
-    }
-
-    .text-center {
-      text-align: center;
     }
 
     button {
