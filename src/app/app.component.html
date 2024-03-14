@@ -109,7 +109,9 @@
             <li><ion-icon name="call-outline"></ion-icon>電話　<a href="tel:0797-85-0208">0797-85-0208</a></li>
             <li><ion-icon name="time-outline"></ion-icon>営業時間　9:00〜18:00</li>
             <li><ion-icon name="lock-closed-outline"></ion-icon>定休日 月曜・火曜</li>
-            <li><ion-icon name="map-outline"></ion-icon>アクセス　阪急「宝塚」駅から徒歩12分、JR「宝塚」駅から徒歩12分</li>
+            <li>
+              <ion-icon name="map-outline"></ion-icon>アクセス　阪急「宝塚」駅から徒歩12分、JR「宝塚」駅から徒歩12分
+            </li>
           </ul>
         </address>
         <iframe
@@ -149,7 +151,14 @@
       <form (submit)="send()">
         <div class="form-line">
           <label for="name"><span class="form-label required">必須</span>お名前</label>
-          <input id="name" type="text" name="name" [(ngModel)]="contactModel.name" required placeholder="例）山田太郎" />
+          <input
+            id="name"
+            type="text"
+            name="name"
+            [(ngModel)]="contactModel.name"
+            required
+            placeholder="例）山田太郎"
+          />
         </div>
         <div class="form-line">
           <label for="mail"><span class="form-label required">必須</span>メールアドレス（半角）</label>

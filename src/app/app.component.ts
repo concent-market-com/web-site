@@ -3,7 +3,15 @@ import { CommonModule, DOCUMENT, NgOptimizedImage } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { logoInstagram, logoFacebook, callOutline, timeOutline, lockClosedOutline, mapOutline, caretDownOutline } from 'ionicons/icons';
+import {
+  logoInstagram,
+  logoFacebook,
+  callOutline,
+  timeOutline,
+  lockClosedOutline,
+  mapOutline,
+  caretDownOutline,
+} from 'ionicons/icons';
 import { heroPaths, recruitPaths } from '../data/images';
 import { ContactModel, Messages, Recruit } from './types';
 import { shukugawa } from '../data/shukugawa';
@@ -41,7 +49,15 @@ export class AppComponent implements OnInit {
   isSend = signal<boolean>(false);
 
   constructor() {
-    addIcons({ logoInstagram, logoFacebook, callOutline, timeOutline, lockClosedOutline, mapOutline, caretDownOutline });
+    addIcons({
+      logoInstagram,
+      logoFacebook,
+      callOutline,
+      timeOutline,
+      lockClosedOutline,
+      mapOutline,
+      caretDownOutline,
+    });
   }
 
   ngOnInit() {

@@ -2,7 +2,7 @@ module.exports = {
   /**
    * Default value is 80. 80 is too small in wide screen.
    */
-  printWidth: 140,
+  printWidth: 120,
   /**
    * Why: Preferred in us.
    */
