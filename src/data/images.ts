@@ -10,6 +10,26 @@ const _heroPaths: string[] = [
 ];
 
 /**
+ * 夙川店の画像です。
+ */
+const _shukugawaPaths: string[] = [
+  '/images/IMG_6928.JPG',
+  '/images/IMG_1492.JPG',
+  '/images/IMG_5302.jpeg',
+  '/images/IMG_6929.JPG',
+];
+
+/**
+ * 宝塚店の画像です。
+ */
+const _takarazukaPaths: string[] = [
+  '/images/IMG_6925.JPG',
+  '/images/IMG_1492.JPG',
+  '/images/IMG_5302.jpeg',
+  '/images/IMG_6929.JPG',
+];
+
+/**
  * 求人エリアの画像です。
  */
 const _recruitPaths: string[] = [
@@ -24,3 +44,5 @@ const _recruitPaths: string[] = [
  */
 export const heroPaths = (): string[] => _heroPaths.map((d) => '/assets' + d);
 export const recruitPaths = (): string[] => _recruitPaths.map((d) => '/assets' + d);
+export const shukugawaPaths = (): string[] => _shukugawaPaths.map((d) => '/assets' + d);
+export const takarazukaPaths = (): string[] => _takarazukaPaths.map((d) => '/assets' + d);

@@ -2,6 +2,7 @@ export type Message = {
   title: string;
   lead: string;
   message: string;
+  imagePaths: string[];
 };
 
 export type Messages = {

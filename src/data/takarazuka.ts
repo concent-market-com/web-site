@@ -1,4 +1,5 @@
 import { Message } from '../app/types';
+import { shukugawaPaths, takarazukaPaths } from './images';
 
 /**
  * 宝塚店に関するライティングです
@@ -11,4 +12,5 @@ export const takarazuka = (): Message => ({
   message: `
 [店舗からのメッセージを書いてください]
     `,
+  imagePaths: takarazukaPaths(),
 });

@@ -35,6 +35,11 @@
   <section class="section-width">
     <h2>{{ messages().shukigawa.title }}</h2>
     <div [innerHTML]="messages().shukigawa.lead | toParagraph"></div>
+    <ul class="scroll-images">
+      @for (path of messages().shukigawa.imagePaths; track path) {
+        <li><img [src]="path" alt="" decoding="async" /></li>
+      }
+    </ul>
   </section>
 
   <section id="shukugawa" class="store shukugawa">
@@ -85,6 +90,11 @@
   <section class="section-width padding">
     <h2>{{ messages().takarazuka.title }}</h2>
     <div [innerHTML]="messages().takarazuka.lead | toParagraph"></div>
+    <ul class="scroll-images">
+      @for (path of messages().takarazuka.imagePaths; track path) {
+        <li><img [src]="path" alt="" decoding="async" /></li>
+      }
+    </ul>
   </section>
 
   <section id="takarazuka" class="store takarazuka">
@@ -246,7 +256,7 @@
     <h2>求人情報</h2>
     <div [innerHTML]="recruit().message | toParagraph"></div>
 
-    <ul class="recruit-images">
+    <ul class="scroll-images">
       @for (path of recruitPaths(); track path) {
         <li><img [src]="path" alt="" decoding="async" /></li>
       }
