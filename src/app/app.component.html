@@ -174,7 +174,7 @@
           ご入力いただいたEメールアドレスや電話番号が誤っている場合やシステム障害が発生した場合等には回答ができない場合がございます。一週間以上経っても回答未着の場合、お手数ですがお電話ください。
         </li>
       </ul>
-      <form (submit)="send()">
+      <form #f="ngForm" (ngSubmit)="send()">
         <div class="form-line">
           <label for="name"><span class="form-label required">必須</span>お名前</label>
           <input
@@ -225,7 +225,7 @@
           ></textarea>
         </div>
         <p class="text-center">
-          <button type="submit" class="submitButton">問い合わせ送信</button>
+          <button type="submit" class="submitButton" [disabled]="f.form.invalid">問い合わせ送信</button>
         </p>
       </form>
     }
