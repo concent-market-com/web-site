@@ -59,4 +59,8 @@ button.submitButton {
   border: 1px solid #333333;
   padding: 8px;
   color: #333333;
+
+  &[disabled] {
+    opacity: 0.5;
+  }
 }
