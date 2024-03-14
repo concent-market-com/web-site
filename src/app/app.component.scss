@@ -95,14 +95,10 @@ header {
 
 .section-width {
   z-index: 100;
+  position: relative;
   max-width: 1024px;
   margin: auto;
   padding: 32px;
-
-  &.area {
-    border-radius: 16px;
-    background-color: rgba(255,255,255, 0.9);
-  }
 
   h2 {
     margin: 32px 0 24px;
@@ -159,19 +155,18 @@ header {
 
 .store {
   margin-top: 120px;
-  margin-bottom: -600px;
-  padding: 32px 16px 640px;
+  margin-bottom: -40px;
+  padding: 32px 16px 40px;
   position: relative;
-  z-index: -100;
 
   &::after {
     content: '';
     position: absolute;
     left:0;
     top: 0;
-    z-index: -1;
+    z-index: 0;
     width: 100%;
-    height: 60%;
+    height: 100%;
   }
 
   &.shukugawa::after {
@@ -188,6 +183,12 @@ header {
       transform: skewY(3deg);
       transform-origin: top right;
     }
+  }
+
+  .section-width {
+    border-radius: 16px;
+    background-color: rgba(255,255,255, 0.9);
+    margin-bottom: calc(16px * 8);
   }
 }
 
@@ -216,8 +217,27 @@ header {
       padding: 0;
       margin: 0;
       li {
+        ion-icon {
+          margin-right: 8px;
+          position: relative;
+          top: 2px;
+        }
         margin: 0 0 8px;
       }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    flex-wrap: wrap;
+    & > * {
+      width: 100%;
+    }
+    address {
+      border-left: 2px solid #333333;
+      padding: 2px 16px;
+      border-right: none;
+      margin-right: 0;
+      margin-bottom: 8px;
     }
   }
 }

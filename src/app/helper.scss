@@ -14,7 +14,8 @@ ul.sns-buttons  {
     padding: 0;
 
     a {
-      display: block;
+      display: flex;
+      align-items: center;
       text-align: center;
       padding: 4px 8px;
       text-decoration: none;
@@ -33,26 +34,17 @@ ul.sns-buttons  {
           rgba(246, 37, 2, 0.8) 45%,
           rgba(182, 47, 82, 0.8) 75%,
           rgba(113, 58, 166, 0.8));
-        color: #fff;
-
-        &:before {
-          content: 'Instagram';
-          border-right: 1px solid #ffffff;
-          padding: 0 8px 0 4px;
-          margin-right: 8px;
-        }
       }
 
       &.facebook {
         background: #1877F2;
-        color: #fff;
-
-        &:before {
-          content: 'Facebook';
-          border-right: 1px solid #ffffff;
-          padding: 0 8px 0 4px;
-          margin-right: 8px;
-        }
+      }
+      ion-icon {
+        font-size: 1.15rem;
+        margin: -1px 4px 0 0;
+      }
+      span {
+        margin: 1px 4px 0 0;
       }
     }
   }
