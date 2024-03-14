@@ -87,53 +87,68 @@
 
   <section id="contact" class="section-width padding contact">
     <h2>お問い合わせ</h2>
-    <ul>
-      <li>夙川本店、宝塚店 to tableへのお問い合わせはどちらもこちらのフォームから受け付けております。</li>
-      <li>お申し出に対しては順次対応させていただいておりますが、受付時間外に送信いただいたものや、内容によりましてはお返事にお時間を頂戴する場合がございます。</li>
-      <li>ご入力いただいたEメールアドレスや電話番号が誤っている場合やシステム障害が発生した場合等には回答ができない場合がございます。一週間以上経っても回答未着の場合、お手数ですがお電話ください。</li>
-    </ul>
-    <form>
-      <div class="form-line">
-        <label for="name"><span class="form-label required">必須</span>お名前</label>
-        <input id="name" type="text" name="お名前" required placeholder="例）山田太郎">
-      </div>
-      <div class="form-line">
-        <label for="mail"><span class="form-label required">必須</span>メールアドレス（半角）</label>
-        <input
-          id="mail"
-          type="text"
-          inputMode="email"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-          required
-          placeholder="例）info@example.com"
-        />
-      </div>
+    @if (isSend()) {
+      <p>問い合わせの送信が完了しました。</p>
+      <p>お申し出に対しては順次対応させていただいておりますが、受付時間外に送信いただいたものや、内容によりましてはお返事にお時間を頂戴する場合がございます。また、ご入力いただいたEメールアドレスや電話番号が誤っている場合やシステム障害が発生した場合等には回答ができない場合がございます。一週間以上経っても回答未着の場合、お手数ですが再度お問い合わせいただけると幸いです。</p>
 
-      <div class="form-line">
-        <label for="tel">お電話番号（半角）</label>
-        <input
-          id="tel"
-          type="text"
-          name="電話番号"
-          placeholder="例）09012345678"
-          inputMode="tel"
-          pattern="\d{2,4}-?\d{3,4}-?\d{3,4}"
-        />
-      </div>
-
-      <div class="form-line">
-        <label for="message"><span class="form-label required">必須</span>メッセージ</label>
-        <textarea
-          id="message"
-          rows="5"
-          required
-          placeholder="お問い合わせ内容をご記入ください。"
-        ></textarea>
-      </div>
       <p class="text-center">
-        <button type="submit" class="submitButton">問い合わせ送信</button>
+        <button (click)="isSend.set(false)" class="submitButton">別のメッセージを送信する</button>
       </p>
-    </form>
+
+    } @else {
+      <ul>
+        <li>夙川本店、宝塚店 to tableへのお問い合わせはどちらもこちらのフォームから受け付けております。</li>
+        <li>お申し出に対しては順次対応させていただいておりますが、受付時間外に送信いただいたものや、内容によりましてはお返事にお時間を頂戴する場合がございます。</li>
+        <li>ご入力いただいたEメールアドレスや電話番号が誤っている場合やシステム障害が発生した場合等には回答ができない場合がございます。一週間以上経っても回答未着の場合、お手数ですがお電話ください。</li>
+      </ul>
+      <form (submit)="send()">
+        <div class="form-line">
+          <label for="name"><span class="form-label required">必須</span>お名前</label>
+          <input id="name" type="text" name="name" [(ngModel)]="contactModel.name" required placeholder="例）山田太郎">
+        </div>
+        <div class="form-line">
+          <label for="mail"><span class="form-label required">必須</span>メールアドレス（半角）</label>
+          <input
+            id="mail"
+            name="email"
+            [(ngModel)]="contactModel.email"
+            type="text"
+            inputMode="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            required
+            placeholder="例）info@example.com"
+          />
+        </div>
+
+        <div class="form-line">
+          <label for="tel">お電話番号（半角）</label>
+          <input
+            id="tel"
+            type="text"
+            name="tel"
+            [(ngModel)]="contactModel.tel"
+            placeholder="例）09012345678"
+            inputMode="tel"
+            pattern="\d{2,4}-?\d{3,4}-?\d{3,4}"
+          />
+        </div>
+
+        <div class="form-line">
+          <label for="message"><span class="form-label required">必須</span>メッセージ</label>
+          <textarea
+            id="message"
+            name="message"
+            [(ngModel)]="contactModel.message"
+            rows="5"
+            required
+            placeholder="お問い合わせ内容をご記入ください。"
+          ></textarea>
+        </div>
+        <p class="text-center">
+          <button type="submit" class="submitButton">問い合わせ送信</button>
+        </p>
+      </form>
+    }
   </section>
 </main>
 

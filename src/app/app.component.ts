@@ -5,35 +5,41 @@ import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoInstagram, logoFacebook, callOutline, timeOutline, lockClosedOutline, mapOutline, caretDownOutline } from 'ionicons/icons';
 import {heroPaths, recruitPaths} from '../data/images';
-import {Message, Recruit} from './types';
+import {ContactModel, Message, Messages, Recruit} from './types';
 import {shukugawa} from '../data/shukugawa';
 import {takarazuka} from '../data/takarazuka';
 import {ToParagraphPipe} from './to-paragraph.pipe';
 import {recruit} from '../data/recruit';
-import {Meta, Title} from '@angular/platform-browser';
+import {Meta} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {firstValueFrom} from 'rxjs';
+import {LoadingController} from '@ionic/angular';
+import {defaultContactModel} from './constant';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NgOptimizedImage, IonIcon, ToParagraphPipe],
+  imports: [CommonModule, RouterOutlet, NgOptimizedImage, IonIcon, ToParagraphPipe, FormsModule],
   templateUrl: './app.component.html',
   styleUrls: ['./header.scss', './app.component.scss', './footer.scss', './helper.scss']
 })
 export class AppComponent implements OnInit {
   private document = inject(DOCUMENT)
   private meta = inject(Meta);
+  private http = inject(HttpClient);
+
+  public contactModel: ContactModel = defaultContactModel();
 
   heroImagePaths = signal<string[]>(heroPaths());
   heroImagePath = signal<string>(heroPaths()[0]);
   recruitPaths = signal<string[]>(recruitPaths());
-  messages = signal<{
-    shukigawa: Message;
-    takarazuka: Message;
-  }>({
+  messages = signal<Messages>({
     shukigawa: shukugawa(),
     takarazuka: takarazuka(),
   });
   recruit = signal<Recruit>(recruit());
+  isSend = signal<boolean>(false);
 
   constructor() {
     addIcons({logoInstagram, logoFacebook, callOutline, timeOutline, lockClosedOutline, mapOutline, caretDownOutline});
@@ -64,6 +70,24 @@ export class AppComponent implements OnInit {
         });
       });
     });
+  }
+
+  async send() {
+    const preMessage = this.contactModel.tel ? `電話番号： ${this.contactModel.tel}\r\n\r\n` : '';
+    const result = await firstValueFrom(this.http.post('https://api.v5.tipsys.me/thirdparty/concent/mail', {
+      from: this.contactModel.email,
+      name: this.contactModel.name,
+      message: preMessage + this.contactModel.message,
+    }))
+      .then(() => true)
+      .catch(() => false);
+
+    if (result) {
+      this.isSend.set(true);
+      this.contactModel = defaultContactModel();
+    } else {
+      alert('メッセージの送信に失敗しました。時間を置いてから再度お試しください。');
+    }
   }
 
   changeHeroImage(path: string) {
