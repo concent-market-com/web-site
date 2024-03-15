@@ -42,7 +42,7 @@
       @for (image of heroImagePaths(); track image.path) {
         @if (image !== heroImagePath()) {
           <li>
-            <button (click)="changeHeroImage(image)">
+            <button (click)="changeHeroImage(image)" aria-label="画像の切り替え">
               <img
                 [ngSrc]="image.path"
                 [width]="image.width"
@@ -188,7 +188,9 @@
       </p>
 
       <p class="text-center">
-        <button (click)="isSend.set(false)" class="submitButton">別のメッセージを送信する</button>
+        <button (click)="isSend.set(false)" class="submitButton" aria-label="別のメッセージを送信する">
+          別のメッセージを送信する
+        </button>
       </p>
     } @else {
       <ul>
@@ -251,7 +253,9 @@
           ></textarea>
         </div>
         <p class="text-center">
-          <button type="submit" class="submitButton" [disabled]="f.form.invalid">問い合わせ送信</button>
+          <button type="submit" class="submitButton" [disabled]="f.form.invalid" aria-label="問い合わせ送信">
+            問い合わせ送信
+          </button>
         </p>
       </form>
     }
@@ -297,7 +301,7 @@
     </ul>
 
     @for (recruit of recruit().recruit; track recruit.type) {
-      <h4>{{ recruit.type }}</h4>
+      <h3>{{ recruit.type }}</h3>
       <table>
         <tbody>
           @for (item of recruit.items; track item.key) {
