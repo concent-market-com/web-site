@@ -12,6 +12,7 @@ import {
   mapOutline,
   caretDownOutline,
   bagOutline,
+  bookmarkOutline,
 } from 'ionicons/icons';
 import { heroPaths, recruitPaths } from '../data/images';
 import { ContactModel, GeneratedImageType, IRequestRdlaboMail, Messages, Recruit } from './types';
@@ -67,6 +68,7 @@ export class AppComponent implements OnInit {
       mapOutline,
       caretDownOutline,
       bagOutline,
+      bookmarkOutline,
     });
   }
 
