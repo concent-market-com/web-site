@@ -1,0 +1,129 @@
+[
+  {
+    "heroPaths": [
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_6931.JPG"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_9691.JPG"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_4555.JPG"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_3653.JPG"
+      }
+    ]
+  },
+  {
+    "recruitPaths": [
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_5285.jpeg"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_4378.JPG"
+      },
+      {
+        "height": 1939,
+        "orientation": 1,
+        "width": 2652,
+        "type": "jpg",
+        "path": "/assets/images/IMG_1492.JPG"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_5302.jpeg"
+      }
+    ]
+  },
+  {
+    "shukugawaPaths": [
+      {
+        "height": 482,
+        "orientation": 1,
+        "width": 724,
+        "type": "jpg",
+        "path": "/assets/images/IMG_3919.JPG"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/31C8080D-48A9-44F9-88F4-2C33EFFFCEDF.jpeg"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_5302.jpeg"
+      },
+      {
+        "height": 1773,
+        "width": 2364,
+        "type": "jpg",
+        "path": "/assets/images/IMG_6929.JPG"
+      }
+    ]
+  },
+  {
+    "takarazukaPaths": [
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_4347.JPG"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_5093.JPG"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_4864.jpeg"
+      },
+      {
+        "height": 1600,
+        "orientation": 1,
+        "width": 2400,
+        "type": "jpg",
+        "path": "/assets/images/IMG_4868.jpeg"
+      }
+    ]
+  }
+]
