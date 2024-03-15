@@ -27,7 +27,7 @@ const result = Object.keys(paths).map((theme) => {
 });
 
 if (existsSync(createdDirPath)) {
-  rmdirSync(createdDirPath);
+  rmdirSync(createdDirPath, { recursive: true });
 }
 
 mkdirSync(createdDirPath);
