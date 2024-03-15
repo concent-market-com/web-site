@@ -12,48 +12,64 @@ const paths = {
 
 type Path = keyof typeof paths;
 const srcPath = './src';
-const widthSizes = [320, 640, 960, 1280, 1920];
-const directoryPath = './src/assets/images';
-const createdDirPath = './src/assets/generated';
+const widthSizes = [320, 1280, 1920];
+
+const directoryPath = [srcPath, 'assets/images'].join('/');
+const createdDirPath = [srcPath, 'assets/generated'].join('/');
 const createdImageDirPath = [createdDirPath, 'images'].join('/');
 
-// 作成の用意
-(() => {
-  if (existsSync(createdDirPath)) {
-    rmdirSync(createdDirPath, { recursive: true });
-  }
-  mkdirSync(createdDirPath);
-  mkdirSync(createdImageDirPath);
-})();
+(async () => {
+  // 作成の用意
+  (() => {
+    if (existsSync(createdDirPath)) {
+      rmdirSync(createdDirPath, { recursive: true });
+    }
+    mkdirSync(createdDirPath);
+    mkdirSync(createdImageDirPath);
+  })();
 
-// directoryPathにあるすべての画像をリサイズ
-(() => {
-  const images = readdirSync(directoryPath);
-  for (const image of images) {
-    const inputPath = [directoryPath, image].join('/');
-    const outputPath = [createdImageDirPath, image].join('/');
+  // directoryPathにあるすべての画像をリサイズ
+  await (async () => {
+    const images = readdirSync(directoryPath);
+    await Promise.all(
+      images.map(async (image) => {
+        const inputPath = [directoryPath, image].join('/');
+        for (const width of widthSizes) {
+          await sharp(inputPath)
+            .resize({ width })
+            .toFile([createdImageDirPath, width + '_' + image].join('/'));
+        }
+      }),
+    );
+  })();
 
-    widthSizes.forEach((width) => {
-      sharp(inputPath)
-        .resize({ width })
-        .toFile([createdImageDirPath, width + '_' + image].join('/'));
-    });
-  }
-})();
+  // 画像サイズの読み込み
+  (() => {
+    const result = Object.keys(paths).map((theme) => {
+      const data = paths[theme as Path].map((path) => {
+        const dimensions = sizeOf([srcPath, path].join(''));
 
-// 画像サイズの読み込み
-(() => {
-  const result = Object.keys(paths).map((theme) => {
-    const data = paths[theme as Path].map((path) => {
-      const dimensions = sizeOf([srcPath, path].join(''));
-      return Object.assign(dimensions, {
-        path,
+        return Object.assign(dimensions, {
+          path,
+          resize: Object.assign(
+            {},
+            ...widthSizes.map((width) => {
+              const resizedPath = [createdImageDirPath, width + '_' + path.split('/').pop()].join('/');
+              const resizedDimensions = sizeOf(resizedPath);
+              return Object.assign(dimensions, {
+                [width]: Object.assign(resizedDimensions, {
+                  path: resizedPath,
+                }),
+              });
+            }),
+          ),
+        });
       });
+      return {
+        [theme]: data,
+      };
     });
-    return {
-      [theme]: data,
-    };
-  });
 
-  writeFileSync([createdDirPath, 'images.json'].join('/'), JSON.stringify(result, null, '\t'));
+    writeFileSync([createdDirPath, 'images.json'].join('/'), JSON.stringify(result, null, '\t'));
+  })();
 })();
