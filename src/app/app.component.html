@@ -31,9 +31,9 @@
 <main>
   <section class="section-hero">
     <img
-      [ngSrc]="heroImagePath().path"
-      [width]="heroImagePath().width"
-      [height]="heroImagePath().height"
+      [ngSrc]="heroImagePath().resize['1920'].path"
+      [width]="heroImagePath().resize['1920'].width"
+      [height]="heroImagePath().resize['1920'].height"
       alt=""
       decoding="async"
       priority
@@ -44,9 +44,9 @@
           <li>
             <button (click)="changeHeroImage(image)" aria-label="画像の切り替え">
               <img
-                [ngSrc]="image.path"
-                [width]="image.width"
-                [height]="image.height"
+                [ngSrc]="image.resize['320'].path"
+                [width]="image.resize['320'].width"
+                [height]="image.resize['320'].height"
                 alt=""
                 decoding="async"
                 priority
@@ -63,7 +63,15 @@
     <div [innerHTML]="messages().shukigawa.lead | toParagraph"></div>
     <ul class="scroll-images">
       @for (image of messages().shukigawa.images; track image.path) {
-        <li><img [ngSrc]="image.path" [width]="image.width" [height]="image.height" alt="" decoding="async" /></li>
+        <li>
+          <img
+            [ngSrc]="image.resize['1280'].path"
+            [width]="image.resize['1280'].width"
+            [height]="image.resize['1280'].height"
+            alt=""
+            decoding="async"
+          />
+        </li>
       }
     </ul>
   </section>
@@ -122,7 +130,15 @@
     <div [innerHTML]="messages().takarazuka.lead | toParagraph"></div>
     <ul class="scroll-images">
       @for (image of messages().takarazuka.images; track image.path) {
-        <li><img [ngSrc]="image.path" [width]="image.width" [height]="image.height" alt="" decoding="async" /></li>
+        <li>
+          <img
+            [ngSrc]="image.resize['1280'].path"
+            [width]="image.resize['1280'].width"
+            [height]="image.resize['1280'].height"
+            alt=""
+            decoding="async"
+          />
+        </li>
       }
     </ul>
   </section>
@@ -296,7 +312,15 @@
 
     <ul class="scroll-images">
       @for (image of recruitPaths(); track image.path) {
-        <li><img [ngSrc]="image.path" [width]="image.width" [height]="image.height" alt="" decoding="async" /></li>
+        <li>
+          <img
+            [ngSrc]="image.resize['1280'].path"
+            [width]="image.resize['1280'].width"
+            [height]="image.resize['1280'].height"
+            alt=""
+            decoding="async"
+          />
+        </li>
       }
     </ul>
 

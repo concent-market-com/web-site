@@ -58,7 +58,7 @@ const createdImageDirPath = [createdDirPath, 'images'].join('/');
               const resizedDimensions = sizeOf(resizedPath);
               return Object.assign(dimensions, {
                 [width]: Object.assign(resizedDimensions, {
-                  path: resizedPath,
+                  path: resizedPath.replace('src/', ''),
                 }),
               });
             }),

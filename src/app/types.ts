@@ -41,4 +41,12 @@ export type GeneratedImageType = {
   width: number;
   type: string;
   path: string;
+  resize: {
+    [width: number]: {
+      height: number;
+      width: number;
+      type: string;
+      path: string;
+    };
+  };
 };
