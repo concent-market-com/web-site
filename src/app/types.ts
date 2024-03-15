@@ -2,7 +2,7 @@ export type Message = {
   title: string;
   lead: string;
   message: string;
-  imagePaths: string[];
+  images: GeneratedImageType[];
 };
 
 export type Messages = {
@@ -34,3 +34,11 @@ export interface IRequestRdlaboMail {
   name: string;
   message: string;
 }
+
+export type GeneratedImageType = {
+  height: number;
+  orientation?: number;
+  width: number;
+  type: string;
+  path: string;
+};

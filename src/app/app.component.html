@@ -20,12 +20,28 @@
 
 <main>
   <section class="section-hero">
-    <img [src]="heroImagePath()" alt="" decoding="async" />
+    <img
+      [ngSrc]="heroImagePath().path"
+      [width]="heroImagePath().width"
+      [height]="heroImagePath().height"
+      alt=""
+      decoding="async"
+      priority
+    />
     <ul>
-      @for (path of heroImagePaths(); track path) {
-        @if (path !== heroImagePath()) {
+      @for (image of heroImagePaths(); track image.path) {
+        @if (image !== heroImagePath()) {
           <li>
-            <button (click)="changeHeroImage(path)"><img [src]="path" alt="" decoding="async" /></button>
+            <button (click)="changeHeroImage(image)">
+              <img
+                [ngSrc]="image.path"
+                [width]="image.width"
+                [height]="image.height"
+                alt=""
+                decoding="async"
+                priority
+              />
+            </button>
           </li>
         }
       }
@@ -36,8 +52,8 @@
     <h2>{{ messages().shukigawa.title }}</h2>
     <div [innerHTML]="messages().shukigawa.lead | toParagraph"></div>
     <ul class="scroll-images">
-      @for (path of messages().shukigawa.imagePaths; track path) {
-        <li><img [src]="path" alt="" decoding="async" /></li>
+      @for (image of messages().shukigawa.images; track image.path) {
+        <li><img [ngSrc]="image.path" [width]="image.width" [height]="image.height" alt="" decoding="async" /></li>
       }
     </ul>
   </section>
@@ -95,8 +111,8 @@
     <h2>{{ messages().takarazuka.title }}</h2>
     <div [innerHTML]="messages().takarazuka.lead | toParagraph"></div>
     <ul class="scroll-images">
-      @for (path of messages().takarazuka.imagePaths; track path) {
-        <li><img [src]="path" alt="" decoding="async" /></li>
+      @for (image of messages().takarazuka.images; track image.path) {
+        <li><img [ngSrc]="image.path" [width]="image.width" [height]="image.height" alt="" decoding="async" /></li>
       }
     </ul>
   </section>
@@ -265,8 +281,8 @@
     <div [innerHTML]="recruit().message | toParagraph"></div>
 
     <ul class="scroll-images">
-      @for (path of recruitPaths(); track path) {
-        <li><img [src]="path" alt="" decoding="async" /></li>
+      @for (image of recruitPaths(); track image.path) {
+        <li><img [ngSrc]="image.path" [width]="image.width" [height]="image.height" alt="" decoding="async" /></li>
       }
     </ul>
 

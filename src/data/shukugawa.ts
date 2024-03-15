@@ -1,5 +1,6 @@
 import { Message } from '../app/types';
 import { shukugawaPaths } from './images';
+import GeneratedImages from '../assets/generated/images.json';
 
 /**
  * 夙川本店に関するライティングです
@@ -14,5 +15,5 @@ export const shukugawa = (): Message => ({
   message: `
 阪急夙川駅から徒歩3分の場所にあるコンセントマーケット夙川本店は、地元の方々に愛されるパン屋です。店内には、焼きたてのパンの香りが漂い、いろいろな種類のパンを選ぶことができます。
     `,
-  imagePaths: shukugawaPaths(),
+  images: GeneratedImages.find((image) => Object.keys(image)[0] === 'shukugawaPaths')!.shukugawaPaths!,
 });

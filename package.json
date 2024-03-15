@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "fmt": "prettier --write \"src/**/*.ts\" && prettier --parser angular --write \"./src/**/*.html\"",
     "prepare": "husky install",
-    "script:image": "ts-node -P scripts/tsconfig.json scripts/generate-image"
+    "script:image": "ts-node -P scripts/tsconfig.json scripts/generate-image",
+    "prebuild": "npm run script:image"
   },
   "private": true,
   "dependencies": {

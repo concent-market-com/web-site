@@ -14,7 +14,7 @@ import {
   bagOutline,
 } from 'ionicons/icons';
 import { heroPaths, recruitPaths } from '../data/images';
-import { ContactModel, Messages, Recruit } from './types';
+import { ContactModel, GeneratedImageType, IRequestRdlaboMail, Messages, Recruit } from './types';
 import { shukugawa } from '../data/shukugawa';
 import { takarazuka } from '../data/takarazuka';
 import { ToParagraphPipe } from './to-paragraph.pipe';
@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { defaultContactModel } from './constant';
+import GeneratedImages from '../assets/generated/images.json';
 
 @Component({
   selector: 'app-root',
@@ -39,9 +40,16 @@ export class AppComponent implements OnInit {
 
   public contactModel: ContactModel = defaultContactModel();
 
-  heroImagePaths = signal<string[]>(heroPaths());
-  heroImagePath = signal<string>(heroPaths()[0]);
-  recruitPaths = signal<string[]>(recruitPaths());
+  heroImagePath = signal<GeneratedImageType>(
+    GeneratedImages.find((image) => Object.keys(image)[0] === 'heroPaths')!.heroPaths![0]!,
+  );
+  heroImagePaths = signal<GeneratedImageType[]>(
+    GeneratedImages.find((image) => Object.keys(image)[0] === 'heroPaths')!.heroPaths!,
+  );
+  recruitPaths = signal<GeneratedImageType[]>(
+    GeneratedImages.find((image) => Object.keys(image)[0] === 'recruitPaths')!.recruitPaths!,
+  );
+
   messages = signal<Messages>({
     shukigawa: shukugawa(),
     takarazuka: takarazuka(),
@@ -66,7 +74,7 @@ export class AppComponent implements OnInit {
     this.readyPrerender({
       title: 'コンセントマーケット | 西宮・宝塚のパン屋さん',
       description: '西宮・宝塚のパン屋さん「コンセントマーケット」。' + shukugawa().title,
-      image: this.heroImagePath(),
+      image: this.heroImagePath().path,
     });
 
     const scorrllLinks = this.document.querySelectorAll('a[href^="#"]');
@@ -96,7 +104,7 @@ export class AppComponent implements OnInit {
         from: this.contactModel.email,
         name: this.contactModel.name,
         message: preMessage + this.contactModel.message,
-      }),
+      } as IRequestRdlaboMail),
     )
       .then(() => true)
       .catch(() => false);
@@ -109,8 +117,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  changeHeroImage(path: string) {
-    this.heroImagePath.set(path);
+  changeHeroImage(image: GeneratedImageType) {
+    this.heroImagePath.set(image);
   }
 
   readyPrerender(meta: { title: string; description: string; image?: string }): void {

@@ -1,5 +1,6 @@
 import { Message } from '../app/types';
 import { takarazukaPaths } from './images';
+import GeneratedImages from '../assets/generated/images.json';
 
 /**
  * 宝塚店に関するライティングです
@@ -16,5 +17,5 @@ export const takarazuka = (): Message => ({
 
 もちろん、本店と同じようにテイクアウトもご利用いただけます。
     `,
-  imagePaths: takarazukaPaths(),
+  images: GeneratedImages.find((image) => Object.keys(image)[0] === 'takarazukaPaths')!.takarazukaPaths!,
 });
