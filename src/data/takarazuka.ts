@@ -1,5 +1,5 @@
 import { Message } from '../app/types';
-import { shukugawaPaths, takarazukaPaths } from './images';
+import { takarazukaPaths } from './images';
 
 /**
  * 宝塚店に関するライティングです
