@@ -69,6 +69,8 @@
       padding: 0;
       width: 120px;
       height: 80px;
+      max-width: 120px;
+      max-height: 80px;
       overflow: hidden;
 
       button {
@@ -81,6 +83,7 @@
 
         img {
           border: 2px solid #fff;
+          width: auto;
           height: 80px;
           object-fit: cover;
           object-position: 50% 50%;

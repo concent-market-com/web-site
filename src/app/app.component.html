@@ -31,12 +31,11 @@
 <main>
   <section class="section-hero">
     <img
-      [ngSrc]="heroImagePath().resize['1920'].path"
+      [src]="heroImagePath().resize['1920'].path"
       [width]="heroImagePath().resize['1920'].width"
       [height]="heroImagePath().resize['1920'].height"
       alt=""
       decoding="async"
-      priority
     />
     <h2>コミュニケーションするパン</h2>
     <ul>
@@ -45,13 +44,12 @@
           <li>
             <button (click)="changeHeroImage(image)" aria-label="画像の切り替え">
               <img
-                [ngSrc]="image.resize['320'].path"
+                [src]="image.resize['320'].path"
                 [width]="image.resize['320'].width"
                 [height]="image.resize['320'].height"
                 [style.background-image]="'url(' + image.resize['1920'].path + ')'"
                 alt=""
                 decoding="async"
-                priority
               />
             </button>
           </li>
