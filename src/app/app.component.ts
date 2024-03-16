@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal, ViewEncapsulation } from '@angular/core';
 import { CommonModule, DOCUMENT, NgOptimizedImage } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { IonIcon } from '@ionic/angular/standalone';
@@ -31,7 +31,7 @@ import GeneratedImages from '../assets/generated/images.json';
   standalone: true,
   imports: [CommonModule, RouterOutlet, NgOptimizedImage, IonIcon, ToParagraphPipe, FormsModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./header.scss', './app.component.scss', './footer.scss', './helper.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
   private document = inject(DOCUMENT);
@@ -123,7 +123,7 @@ export class AppComponent implements OnInit {
   }
 
   readyPrerender(meta: { title: string; description: string; image?: string }): void {
-    const domain: string = 'https://concent-market.web.app/';
+    const domain: string = 'https://concent-market.com/';
     this.meta.removeTag('name=description');
     this.meta.removeTag('name="twitter:title"');
     this.meta.removeTag('name="twitter:description"');
