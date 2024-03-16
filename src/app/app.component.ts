@@ -123,7 +123,7 @@ export class AppComponent implements OnInit {
   }
 
   readyPrerender(meta: { title: string; description: string; image?: string }): void {
-    const domain: string = 'https://concent-market.com/';
+    const domain: string = 'https://concent-market.com';
     this.meta.removeTag('name=description');
     this.meta.removeTag('name="twitter:title"');
     this.meta.removeTag('name="twitter:description"');
