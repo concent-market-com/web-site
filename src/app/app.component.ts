@@ -14,7 +14,6 @@ import {
   bagOutline,
   bookmarkOutline,
 } from 'ionicons/icons';
-import { heroPaths, recruitPaths } from '../data/images';
 import { ContactModel, GeneratedImageType, IRequestRdlaboMail, Messages, Recruit } from './types';
 import { shukugawa } from '../data/shukugawa';
 import { takarazuka } from '../data/takarazuka';
