@@ -166,11 +166,11 @@ export class AppComponent implements OnInit {
     this.meta.addTags([
       {
         name: 'twitter:image',
-        content: meta.image || domain + '/assets/icon.png',
+        content: domain + meta.image || domain + '/assets/icon.png',
       },
       {
         property: 'og:image',
-        content: meta.image || domain + '/assets/icon.png',
+        content: domain + meta.image || domain + '/assets/icon.png',
       },
     ]);
   }
