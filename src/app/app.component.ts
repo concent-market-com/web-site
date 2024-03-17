@@ -79,13 +79,13 @@ export class AppComponent implements OnInit {
     });
 
     const scorrllLinks = this.document.querySelectorAll('a[href^="#"]');
-    scorrllLinks.forEach((scorrllLink) => {
-      scorrllLink.addEventListener('click', (e) => {
+    scorrllLinks.forEach((scrollLink) => {
+      scrollLink.addEventListener('click', (e) => {
         if (window === undefined) {
           return;
         }
         e.preventDefault();
-        const hrefLink = scorrllLink.getAttribute('href')!;
+        const hrefLink = scrollLink.getAttribute('href')!;
         const targetContent = this.document.getElementById(hrefLink.replace('#', ''));
         const rectTop = targetContent!.getBoundingClientRect().top;
         const positionY = window.scrollY;
