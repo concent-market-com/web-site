@@ -43,3 +43,4 @@ Thumbs.db
 
 # Generated files
 /src/assets/generated/*
+.nx/*
