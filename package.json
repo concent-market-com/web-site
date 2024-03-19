@@ -14,7 +14,7 @@
     "script:image": "ts-node -P scripts/tsconfig.json scripts/generate-image",
     "prebuild": "npm run script:image"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^17.0.0",
     "@angular/common": "^17.0.0",
