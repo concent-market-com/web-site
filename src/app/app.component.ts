@@ -25,6 +25,7 @@ import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { defaultContactModel } from './constant';
 import GeneratedImages from '../assets/generated/images.json';
+import { contact } from '../data/contact';
 
 @Component({
   selector: 'app-root',
@@ -55,6 +56,7 @@ export class AppComponent implements OnInit {
     takarazuka: takarazuka(),
   });
   recruit = signal<Recruit>(recruit());
+  contact = signal<string[]>(contact());
   isSend = signal<boolean>(false);
 
   constructor() {
