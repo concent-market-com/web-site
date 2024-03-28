@@ -17,7 +17,7 @@ const _shukugawaPaths: string[] = [
   '/images/IMG_6931.JPG',
   '/images/31C8080D-48A9-44F9-88F4-2C33EFFFCEDF.jpeg',
   '/images/IMG_5302.jpeg',
-  '/images/IMG_6929.JPG',
+  '/images/IMG_6765.jpeg',
 ];
 
 /**
