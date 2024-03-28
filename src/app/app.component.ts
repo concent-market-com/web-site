@@ -73,8 +73,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.readyPrerender({
-      title: 'コンセントマーケット | 西宮・宝塚のパン屋さん',
-      description: '西宮・宝塚のパン屋さん「コンセントマーケット」。' + shukugawa().title,
+      title: 'コンセントマーケット | 西宮市夙川・宝塚のパン屋さん',
+      description: '西宮市夙川・宝塚のパン屋さん「コンセントマーケット」。' + shukugawa().title,
       image: this.heroImagePath().path,
     });
 
