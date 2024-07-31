@@ -37,7 +37,7 @@ export const recruit = (): Recruit => ({
     {
       type: 'パート・アルバイト',
       items: [
-        { key: '職種', value: '販売スタッフ / 道路整理スタッフ' },
+        { key: '職種', value: '販売スタッフ / 製造補助スタッフ' },
         { key: '勤務地', value: '夙川本店 / to table 宝塚店' },
         { key: '給与', value: '時給 1,010円〜' },
         { key: '勤務時間', value: '8:00〜19:00のうち、4～8時間程度' },
