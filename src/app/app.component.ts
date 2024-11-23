@@ -29,9 +29,9 @@ import { contact } from '../data/contact';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet, NgOptimizedImage, IonIcon, ToParagraphPipe, FormsModule],
+  imports: [CommonModule, NgOptimizedImage, IonIcon, ToParagraphPipe, FormsModule],
   templateUrl: './app.component.html',
+  standalone: true,
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {

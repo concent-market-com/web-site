@@ -1,10 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import './reset.scss';
-@import './app/header.scss';
-@import './app/app.component.scss';
-@import './app/footer.scss';
-@import './app/helper.scss';
+@use 'app/header.scss';
+@use 'app/app.component.scss';
+@use 'app/footer.scss';
+@use 'app/helper.scss';
 
 body {
   margin: 0;
