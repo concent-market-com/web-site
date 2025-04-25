@@ -345,8 +345,8 @@
         <tbody>
           @for (item of recruit.items; track item.key) {
             <tr>
-              <th>{{ item.key }}</th>
-              <td>{{ item.value }}</td>
+              <th style="vertical-align: top">{{ item.key }}</th>
+              <td [innerText]="item.value"></td>
             </tr>
           }
         </tbody>
