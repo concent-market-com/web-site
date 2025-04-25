@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal, ViewEncapsulation } from '@angular/core';
 import { CommonModule, DOCUMENT, NgOptimizedImage } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { IonIcon } from '@ionic/angular/standalone';
@@ -32,6 +32,7 @@ import { contact } from '../data/contact';
   imports: [CommonModule, NgOptimizedImage, IonIcon, ToParagraphPipe, FormsModule],
   templateUrl: './app.component.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
