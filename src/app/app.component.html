@@ -1,17 +1,31 @@
 <header>
-  <h1>
-    <a href="https://concent-market.com/">
-      <img
-        ngSrc="../assets/logo.jpeg"
-        alt="コンセントマーケット"
-        width="770"
-        height="212"
-        priority
-        decoding="async"
-        ngSrcset="100w, 200w, 300w"
-      />
-    </a>
-  </h1>
+  <div style="display: flex; justify-content: space-between">
+    <h1>
+      <a href="https://concent-market.com/">
+        <img
+          ngSrc="../assets/logo.jpeg"
+          alt="コンセントマーケット"
+          width="770"
+          height="212"
+          priority
+          decoding="async"
+          ngSrcset="100w, 200w, 300w"
+        />
+      </a>
+    </h1>
+    <a
+      href="https://concent315.base.shop/"
+      target="_blank"
+      style="
+        align-self: center;
+        margin: 8px 16px 0 0;
+        padding: 4px 8px;
+        border: 2px solid #000000;
+        text-decoration: none;
+      "
+      >オンラインストア</a
+    >
+  </div>
   <ul>
     <li>
       <a href="#shukugawa"><ion-icon name="caret-down-outline"></ion-icon>夙川本店</a>
@@ -20,10 +34,10 @@
       <a href="#takarazuka"><ion-icon name="caret-down-outline"></ion-icon>to table 宝塚店</a>
     </li>
     <li>
-      <a href="#contact"><ion-icon name="caret-down-outline"></ion-icon>お問い合わせ</a>
+      <a href="#recruit"><ion-icon name="caret-down-outline"></ion-icon>求人情報</a>
     </li>
     <li>
-      <a href="#recruit"><ion-icon name="caret-down-outline"></ion-icon>求人情報</a>
+      <a href="#contact"><ion-icon name="caret-down-outline"></ion-icon>お問い合わせ</a>
     </li>
   </ul>
 </header>
@@ -37,7 +51,6 @@
       alt=""
       decoding="async"
     />
-    <h2>コミュニケーションするパン</h2>
     <ul>
       @for (image of heroImagePaths(); track image.path) {
         @if (image !== heroImagePath()) {
@@ -203,6 +216,90 @@
     </div>
   </section>
 
+  <section id="recruit" class="section-width recruit">
+    <h2>求人情報</h2>
+    <div [innerHTML]="recruit().message | toParagraph"></div>
+
+    @for (item of recruit().messages; track item.title; let i = $index) {
+      <h3>{{ item.title }}</h3>
+      <div [innerHTML]="item.message | toParagraph"></div>
+    }
+
+    <h3>キャリアのステップ</h3>
+    @for (step of recruit().steps; track step; let i = $index) {
+      <h4>STEP.{{ i + 1 }}</h4>
+      <div [innerHTML]="step | toParagraph"></div>
+    }
+
+    <ul class="scroll-images">
+      @for (image of recruitPaths(); track image.path) {
+        <li>
+          <img
+            [ngSrc]="image.resize['1280'].path"
+            [width]="image.resize['1280'].width"
+            [height]="image.resize['1280'].height"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        </li>
+      }
+    </ul>
+
+    @for (recruit of recruit().recruit; track recruit.type) {
+      <h3>{{ recruit.type }}</h3>
+      <table>
+        <tbody>
+          @for (item of recruit.items; track item.key) {
+            <tr>
+              <th style="vertical-align: top">{{ item.key }}</th>
+              <td [innerText]="item.value"></td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </section>
+</main>
+
+<footer>
+  <div class="dark">
+    <section class="section-width">
+      <div class="copy-right">
+        <h2>CONCENT MARKET</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>運営会社</th>
+              <td>株式会社Ｓａｕｄｅ</td>
+            </tr>
+            <tr>
+              <th>代表者名</th>
+              <td>岩井 直人</td>
+            </tr>
+            <tr>
+              <th>本店の所在地</th>
+              <td>兵庫県西宮市寿町５番１５号</td>
+            </tr>
+            <tr>
+              <th>登録番号</th>
+              <td>
+                T4140001074356（<a
+                  href="https://www.invoice-kohyo.nta.go.jp/regno-search/detail?selRegNo=4140001074356"
+                  target="_blank"
+                  >適格請求書事業者公開サイト</a
+                >）
+              </td>
+            </tr>
+            <tr>
+              <th>電話</th>
+              <td><a href="tel:0798-23-0707">0798-23-0707</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
   <section id="contact" class="section-width contact">
     <h2>お問い合わせ</h2>
     @if (isSend()) {
@@ -278,79 +375,6 @@
           </button>
         </p>
       </form>
-    }
-  </section>
-</main>
-
-<footer>
-  <div class="dark">
-    <section class="section-width">
-      <div class="copy-right">
-        <h2>CONCENT MARKET</h2>
-        <table>
-          <tbody>
-            <tr>
-              <th>運営会社</th>
-              <td>株式会社Ｓａｕｄｅ</td>
-            </tr>
-            <tr>
-              <th>代表者名</th>
-              <td>岩井 直人</td>
-            </tr>
-            <tr>
-              <th>本店の所在地</th>
-              <td>兵庫県西宮市寿町５番１５号</td>
-            </tr>
-            <tr>
-              <th>登録番号</th>
-              <td>
-                T4140001074356（<a
-                  href="https://www.invoice-kohyo.nta.go.jp/regno-search/detail?selRegNo=4140001074356"
-                  target="_blank"
-                  >適格請求書事業者公開サイト</a
-                >）
-              </td>
-            </tr>
-            <tr>
-              <th>電話</th>
-              <td><a href="tel:0798-23-0707">0798-23-0707</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-  </div>
-  <section id="recruit" class="section-width recruit">
-    <h2>求人情報</h2>
-    <div [innerHTML]="recruit().message | toParagraph"></div>
-
-    <ul class="scroll-images">
-      @for (image of recruitPaths(); track image.path) {
-        <li>
-          <img
-            [ngSrc]="image.resize['1280'].path"
-            [width]="image.resize['1280'].width"
-            [height]="image.resize['1280'].height"
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
-        </li>
-      }
-    </ul>
-
-    @for (recruit of recruit().recruit; track recruit.type) {
-      <h3>{{ recruit.type }}</h3>
-      <table>
-        <tbody>
-          @for (item of recruit.items; track item.key) {
-            <tr>
-              <th style="vertical-align: top">{{ item.key }}</th>
-              <td [innerText]="item.value"></td>
-            </tr>
-          }
-        </tbody>
-      </table>
     }
   </section>
 </footer>

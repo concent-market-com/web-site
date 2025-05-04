@@ -19,6 +19,11 @@ export type ContactModel = {
 
 export type Recruit = {
   message: string;
+  messages: {
+    title: string;
+    message: string;
+  }[];
+  steps: string[];
   recruit: {
     type: string;
     items: {
