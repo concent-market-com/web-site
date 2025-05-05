@@ -3,6 +3,10 @@ header {
   margin: auto;
   padding: 16px 0 0;
 
+  .header-logo {
+    display: flex;
+    justify-content: space-between;
+  }
   h1 {
     a {
       display: inline-block;
@@ -11,6 +15,32 @@ header {
       width: 120px;
       height: auto;
       margin-left: 16px;
+    }
+  }
+  .store-link {
+    align-self: center;
+    margin: 16px 0 0 0;
+    padding: 4px 8px;
+    border: 2px solid #000000;
+    display: flex;
+    text-decoration: none;
+
+    @media screen and (max-width: 1024px) {
+      margin-right: 16px;
+    }
+
+    @media screen and (max-width: 800px) {
+      margin-right: 8px;
+      border: none;
+    }
+
+    img {
+      width: 20px;
+      height: auto;
+      margin-right: 8px;
+    }
+    span {
+      color: #000000;
     }
   }
   ul {

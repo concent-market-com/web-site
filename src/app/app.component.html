@@ -1,5 +1,5 @@
 <header>
-  <div style="display: flex; justify-content: space-between">
+  <div class="header-logo">
     <h1>
       <a href="https://concent-market.com/">
         <img
@@ -13,18 +13,18 @@
         />
       </a>
     </h1>
-    <a
-      href="https://concent315.base.shop/"
-      target="_blank"
-      style="
-        align-self: center;
-        margin: 8px 16px 0 0;
-        padding: 4px 8px;
-        border: 2px solid #000000;
-        text-decoration: none;
-      "
-      >オンラインストア</a
-    >
+    <a href="https://concent315.base.shop/" target="_blank" class="store-link">
+      <img
+        ngSrc="../assets/base_logo_vertical_white.png"
+        alt="BASE"
+        width="650"
+        height="712"
+        priority
+        decoding="async"
+        ngSrcset="100w, 200w, 300w"
+      />
+      <span>オンラインストア</span>
+    </a>
   </div>
   <ul>
     <li>
@@ -227,7 +227,7 @@
 
     <h3>キャリアのステップ</h3>
     @for (step of recruit().steps; track step; let i = $index) {
-      <h4>STEP.{{ i + 1 }}</h4>
+      <h4>ステップ{{ i + 1 }}</h4>
       <div [innerHTML]="step | toParagraph"></div>
     }
 

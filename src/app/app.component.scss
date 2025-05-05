@@ -103,13 +103,13 @@
     list-style: none;
     padding: 0;
     margin: 16px 0;
+    max-width: 100%;
+    overflow-x: scroll;
 
     @media screen and (max-width: 800px) {
       margin-bottom: 0;
     }
 
-    max-width: 100%;
-    overflow-x: scroll;
     li {
       flex-shrink: 0;
       width: 380px;
@@ -129,13 +129,13 @@
 
 .store {
   margin-top: calc(16px * 6);
-  @media screen and (max-width: 800px) {
-    margin-top: 40px;
-  }
-
   margin-bottom: 0;
   padding: 32px 16px 4px;
   position: relative;
+
+  @media screen and (max-width: 800px) {
+    margin-top: 40px;
+  }
 
   &::after {
     content: '';
