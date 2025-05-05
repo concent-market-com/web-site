@@ -24,6 +24,12 @@ header {
     border: 2px solid #000000;
     display: flex;
     text-decoration: none;
+    &:hover {
+      border: 2px solid #8f5e49;
+      span {
+        color: #8f5e49;
+      }
+    }
 
     @media screen and (max-width: 1024px) {
       margin-right: 16px;
@@ -32,6 +38,15 @@ header {
     @media screen and (max-width: 800px) {
       margin-right: 8px;
       border: none;
+      span {
+        color: #8f5e49;
+      }
+      &:hover {
+        border: none;
+        span {
+          color: #8f5e49;
+        }
+      }
     }
 
     img {
