@@ -1,4 +1,4 @@
-import { Message } from '../app/types';
+import { Message } from '../config/types';
 import GeneratedImages from '../assets/generated/images.json';
 
 /**
