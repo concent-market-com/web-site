@@ -13,64 +13,11 @@
         />
       </a>
     </h1>
-    <a href="https://concent315.base.shop/" target="_blank" class="store-link">
-      <img
-        ngSrc="/assets/base_logo_vertical_white.png"
-        alt="BASE"
-        width="650"
-        height="712"
-        priority
-        decoding="async"
-        ngSrcset="100w, 200w, 300w"
-      />
-      <span>オンラインストア</span>
-    </a>
   </div>
-  <ul>
-    <li>
-      <a href="#shukugawa"><ion-icon name="caret-down-outline"></ion-icon>夙川本店</a>
-    </li>
-    <li>
-      <a href="#takarazuka"><ion-icon name="caret-down-outline"></ion-icon>to table 宝塚店</a>
-    </li>
-    <li>
-      <a href="#recruit"><ion-icon name="caret-down-outline"></ion-icon>求人情報</a>
-    </li>
-    <li>
-      <a href="#contact"><ion-icon name="caret-down-outline"></ion-icon>お問い合わせ</a>
-    </li>
-  </ul>
+  <ul></ul>
 </header>
 
 <main>
-  <section class="section-hero">
-    <img
-      [src]="heroImagePath().resize['1920'].path"
-      [width]="heroImagePath().resize['1920'].width"
-      [height]="heroImagePath().resize['1920'].height"
-      alt=""
-      decoding="async"
-    />
-    <ul>
-      @for (image of heroImagePaths(); track image.path) {
-        @if (image !== heroImagePath()) {
-          <li>
-            <button (click)="changeHeroImage(image)" aria-label="画像の切り替え">
-              <img
-                [src]="image.resize['320'].path"
-                [width]="image.resize['320'].width"
-                [height]="image.resize['320'].height"
-                [style.background-image]="'url(' + image.resize['1920'].path + ')'"
-                alt=""
-                decoding="async"
-              />
-            </button>
-          </li>
-        }
-      }
-    </ul>
-  </section>
-
   <section class="section-width">
     <h2>{{ messages().shukigawa.title }}</h2>
     <div [innerHTML]="messages().shukigawa.lead | toParagraph"></div>
@@ -87,29 +34,16 @@
         </li>
       }
     </ul>
+    <div [innerHTML]="messages().shukigawa.message | toParagraph"></div>
   </section>
 
   <section id="shukugawa" class="store shukugawa">
     <div class="section-width area">
-      <ul class="sns-buttons">
-        <li>
-          <a href="https://www.instagram.com/concentmarket/" class="instagram" target="_blank"
-            ><ion-icon name="logo-instagram"></ion-icon><span>concentmarket</span></a
-          >
-        </li>
-        <li>
-          <a href="https://www.facebook.com/profile.php?id=100064530558997&fref=ts" class="facebook" target="_blank"
-            ><ion-icon name="logo-facebook"></ion-icon><span>コンセントマーケット</span></a
-          >
-        </li>
-      </ul>
-
-      <h2>コンセントマーケット 夙川本店</h2>
-      <div [innerHTML]="messages().shukigawa.message | toParagraph"></div>
-
+      <h2>勤務地</h2>
       <div class="shop-information">
-        <address>
-          <ul>
+        <div>
+          <h3>コンセントマーケット 夙川本店</h3>
+          <ul class="address">
             <li>
               <ion-icon name="call-outline"></ion-icon><span>電話　<a href="tel:0798-23-0707">0798-23-0707</a></span>
             </li>
@@ -128,61 +62,22 @@
               <span>2010年3月15日オープン</span>
             </li>
           </ul>
-        </address>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13114.252391262242!2d135.3288101!3d34.7414056!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f2fb6a4259ed%3A0xe57628dbee364609!2z44Kz44Oz44K744Oz44OI44Oe44O844Kx44OD44OI!5e0!3m2!1sja!2sjp!4v1710407573744!5m2!1sja!2sjp"
-          width="100%"
-          height="200"
-          title="コンセントマーケット 夙川本店のGoogle Map"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-width">
-    <h2>{{ messages().takarazuka.title }}</h2>
-    <div [innerHTML]="messages().takarazuka.lead | toParagraph"></div>
-    <ul class="scroll-images">
-      @for (image of messages().takarazuka.images; track image.path) {
-        <li>
-          <img
-            [ngSrc]="image.resize['1280'].path"
-            [width]="image.resize['1280'].width"
-            [height]="image.resize['1280'].height"
-            alt=""
-            decoding="async"
-          />
-        </li>
-      }
-    </ul>
-  </section>
-
-  <section id="takarazuka" class="store takarazuka">
-    <div class="section-width area">
-      <ul class="sns-buttons">
-        <li>
-          <a class="instagram" href="https://www.instagram.com/concent.takarazuka/" target="_blank"
-            ><ion-icon name="logo-instagram"></ion-icon><span>concent.takarazuka</span></a
-          >
-        </li>
-        <li>
-          <a class="facebook" href="https://www.facebook.com/profile.php?id=100064530558997&fref=ts" target="_blank"
-            ><ion-icon name="logo-facebook"></ion-icon><span>コンセントマーケット</span></a
-          >
-        </li>
-      </ul>
-
-      <h2>コンセントマーケット to table 宝塚店</h2>
-
-      <div [innerHTML]="messages().takarazuka.message | toParagraph"></div>
-
-      <div class="shop-information">
-        <address>
-          <ul>
+          <ul class="sns-buttons">
+            <li>
+              <a href="https://www.instagram.com/concentmarket/" class="instagram" target="_blank"
+                ><ion-icon name="logo-instagram"></ion-icon><span>concentmarket</span></a
+              >
+            </li>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100064530558997&fref=ts" class="facebook" target="_blank"
+                ><ion-icon name="logo-facebook"></ion-icon><span>コンセントマーケット</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>コンセントマーケット to table 宝塚店</h3>
+          <ul class="address">
             <li>
               <ion-icon name="call-outline"></ion-icon><span>電話　<a href="tel:0797-85-0208">0797-85-0208</a></span>
             </li>
@@ -201,17 +96,19 @@
               <span>2021年10月1日オープン</span>
             </li>
           </ul>
-        </address>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104919.25469287252!2d135.25545268922568!3d34.73728247055225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f5368e8f67a7%3A0xf019104b7994a4aa!2sCONCENT%20MARKET%20to%20table!5e0!3m2!1sja!2sjp!4v1710408385243!5m2!1sja!2sjp"
-          width="100%"
-          height="200"
-          title="コンセントマーケット to table 宝塚店のGoogle Map"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+          <ul class="sns-buttons">
+            <li>
+              <a class="instagram" href="https://www.instagram.com/concent.takarazuka/" target="_blank"
+                ><ion-icon name="logo-instagram"></ion-icon><span>concent.takarazuka</span></a
+              >
+            </li>
+            <li>
+              <a class="facebook" href="https://www.facebook.com/profile.php?id=100064530558997&fref=ts" target="_blank"
+                ><ion-icon name="logo-facebook"></ion-icon><span>コンセントマーケット</span></a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

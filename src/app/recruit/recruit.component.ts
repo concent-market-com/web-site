@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonIcon } from '@ionic/angular/standalone';
 import { DOCUMENT, NgOptimizedImage } from '@angular/common';
@@ -6,9 +6,10 @@ import { ToParagraphPipe } from '../shared/to-paragraph.pipe';
 import { Meta } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { ContactModel, GeneratedImageType, IRequestRdlaboMail, Messages, Recruit } from '../../config/types';
+import { defaultContactModel } from '../../config/constant';
 import GeneratedImages from '../../assets/generated/images.json';
-import { shukugawa } from '../../data/main/shukugawa';
-import { takarazuka } from '../../data/main/takarazuka';
+import { lead } from '../../data/recruit/lead';
+import { takarazuka } from '../../data/recruit/takarazuka';
 import { addIcons } from 'ionicons';
 import {
   bagOutline,
@@ -22,18 +23,16 @@ import {
   timeOutline,
 } from 'ionicons/icons';
 import { firstValueFrom } from 'rxjs';
-import { recruit } from '../../data/main/recruit';
-import { contact } from '../../data/main/contact';
-import { defaultContactModel } from '../../config/constant';
+import { recruit } from '../../data/recruit/recruit';
+import { contact } from '../../data/recruit/contact';
 
 @Component({
-  selector: 'app-main',
+  selector: 'app-recruit',
   imports: [FormsModule, IonIcon, NgOptimizedImage, ReactiveFormsModule, ToParagraphPipe],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './recruit.component.html',
+  styleUrl: './recruit.component.scss',
 })
-export class MainComponent implements OnInit {
+export class RecruitComponent {
   private document = inject(DOCUMENT);
   private meta = inject(Meta);
   private http = inject(HttpClient);
@@ -43,15 +42,12 @@ export class MainComponent implements OnInit {
   heroImagePath = signal<GeneratedImageType>(
     GeneratedImages.find((image) => Object.keys(image)[0] === 'heroPaths')!.heroPaths![0]!,
   );
-  heroImagePaths = signal<GeneratedImageType[]>(
-    GeneratedImages.find((image) => Object.keys(image)[0] === 'heroPaths')!.heroPaths!,
-  );
   recruitPaths = signal<GeneratedImageType[]>(
     GeneratedImages.find((image) => Object.keys(image)[0] === 'recruitPaths')!.recruitPaths!,
   );
 
   messages = signal<Messages>({
-    shukigawa: shukugawa(),
+    shukigawa: lead(),
     takarazuka: takarazuka(),
   });
   recruit = signal<Recruit>(recruit());
@@ -75,7 +71,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.readyPrerender({
       title: 'コンセントマーケット | 西宮市夙川・宝塚のパン屋さん',
-      description: '西宮市夙川・宝塚のパン屋さん「コンセントマーケット」。' + shukugawa().title,
+      description: '西宮市夙川・宝塚のパン屋さん「コンセントマーケット」。' + lead().title,
       image: this.heroImagePath().path,
     });
 

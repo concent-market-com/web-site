@@ -1,5 +1,5 @@
-import { Message } from '../config/types';
-import GeneratedImages from '../assets/generated/images.json';
+import { Message } from '../../config/types';
+import GeneratedImages from '../../assets/generated/images.json';
 
 /**
  * 宝塚店に関するライティングです

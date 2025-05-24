@@ -2,12 +2,12 @@
 
 ## テキスト更新用リンク
 
-| 項目       | ファイル                                                                        |
-| ---------- | ------------------------------------------------------------------------------- |
-| 夙川本店   | https://github.com/concent-market-com/web-site/edit/main/src/data/shukugawa.ts  |
-| 宝塚店     | https://github.com/concent-market-com/web-site/edit/main/src/data/takarazuka.ts |
-| 求人       | https://github.com/concent-market-com/web-site/edit/main/src/data/recruit.ts    |
-| 問い合わせ | https://github.com/concent-market-com/web-site/edit/main/src/data/contact.ts    |
+| 項目       | ファイル                                                                             |
+| ---------- | ------------------------------------------------------------------------------------ |
+| 夙川本店   | https://github.com/concent-market-com/web-site/edit/main/src/data/main/shukugawa.ts  |
+| 宝塚店     | https://github.com/concent-market-com/web-site/edit/main/src/data/main/takarazuka.ts |
+| 求人       | https://github.com/concent-market-com/web-site/edit/main/src/data/main/recruit.ts    |
+| 問い合わせ | https://github.com/concent-market-com/web-site/edit/main/src/data/main/contact.ts    |
 
 ### 画像を更新する方法
 

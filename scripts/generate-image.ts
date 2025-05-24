@@ -1,6 +1,6 @@
 import sharp from 'sharp';
 import sizeOf from 'image-size';
-import { heroPaths, recruitPaths, shukugawaPaths, takarazukaPaths } from '../src/data/images';
+import { heroPaths, recruitPaths, shukugawaPaths, takarazukaPaths } from '../src/data/main/images';
 import { existsSync, rmdirSync, writeFileSync, mkdirSync, readdirSync } from 'fs';
 
 const paths = {
