@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/assets", "src/robots.txt", "src/sitemap.xml"],
-            "styles": ["src/reset.scss", "src/styles.scss"],
+            "styles": ["src/theme/reset.scss", "src/theme/styles.scss"],
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -89,7 +89,7 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/assets", "src/robots.txt", "src/sitemap.xml"],
-            "styles": ["src/reset.scss", "src/styles.scss"],
+            "styles": ["src/theme/reset.scss", "src/theme/styles.scss"],
             "scripts": []
           }
         },
