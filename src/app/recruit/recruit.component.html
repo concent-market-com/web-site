@@ -112,8 +112,7 @@
   </section>
 
   <section id="recruit" class="section-width recruit">
-    <h2>求人情報</h2>
-    <div [innerHTML]="recruit().message | toParagraph"></div>
+    <h2>私たちのお仕事の特徴</h2>
 
     @for (item of recruit().messages; track item.title; let i = $index) {
       <h3>{{ item.title }}</h3>
