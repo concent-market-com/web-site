@@ -139,6 +139,7 @@
 
   h3 {
     margin: 0 0 16px 0;
+    transform: translateX(-14px);
   }
 
   @media screen and (max-width: 800px) {
@@ -156,7 +157,7 @@
   }
 
   &.shukugawa::after {
-    background: #f0f0f0 url('/assets/images/IMG_6928.JPG') center center;
+    background: #f0f0f0 url('/assets/images/IMG_5285.jpeg') center center;
     background-size: cover;
     transform: skewY(3deg);
     transform-origin: top right;
@@ -182,7 +183,7 @@
   display: flex;
   align-items: center;
   border-radius: 8px;
-  margin-top: 32px;
+  margin-top: 16px;
 
   & > * {
     width: 50%;
@@ -219,9 +220,12 @@
       padding: 2px 16px;
       &:first-child {
         border-right: none;
+        margin-right: 0;
       }
-      margin-right: 0;
-      margin-left: 0;
+      &:nth-child(2) {
+        margin-top: 32px;
+        margin-left: 0;
+      }
       margin-bottom: 8px;
     }
   }
