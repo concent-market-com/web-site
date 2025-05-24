@@ -111,6 +111,23 @@
     </div>
   </section>
 
+  <section class="section-width recruit">
+    <h2>現在求人中</h2>
+    @for (recruit of recruit().recruit; track recruit.type) {
+      <h3>{{ recruit.type }}</h3>
+      <table>
+        <tbody>
+          @for (item of recruit.items; track item.key) {
+            <tr>
+              <th style="vertical-align: top">{{ item.key }}</th>
+              <td [innerText]="item.value"></td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </section>
+
   <section id="recruit" class="section-width recruit">
     <h2>私たちのお仕事</h2>
     @for (item of recruit().messages; track item.title; let i = $index) {
@@ -138,20 +155,6 @@
         </li>
       }
     </ul>
-
-    @for (recruit of recruit().recruit; track recruit.type) {
-      <h3>{{ recruit.type }}</h3>
-      <table>
-        <tbody>
-          @for (item of recruit.items; track item.key) {
-            <tr>
-              <th style="vertical-align: top">{{ item.key }}</th>
-              <td [innerText]="item.value"></td>
-            </tr>
-          }
-        </tbody>
-      </table>
-    }
   </section>
 </main>
 
