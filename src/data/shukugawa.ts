@@ -1,5 +1,4 @@
 import { Message } from '../config/types';
-import { shukugawaPaths } from './images';
 import GeneratedImages from '../assets/generated/images.json';
 
 /**

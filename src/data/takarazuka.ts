@@ -1,5 +1,4 @@
 import { Message } from '../config/types';
-import { takarazukaPaths } from './images';
 import GeneratedImages from '../assets/generated/images.json';
 
 /**

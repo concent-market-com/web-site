@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonIcon } from '@ionic/angular/standalone';
 import { DOCUMENT, NgOptimizedImage } from '@angular/common';
@@ -33,7 +33,7 @@ import { defaultContactModel } from '../../config/constant';
   styleUrl: './main.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
   private document = inject(DOCUMENT);
   private meta = inject(Meta);
   private http = inject(HttpClient);

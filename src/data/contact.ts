@@ -1,6 +1,3 @@
-import { Message } from '../config/types';
-import GeneratedImages from '../assets/generated/images.json';
-
 /**
  * 問い合わせに関するライティングです
  */
