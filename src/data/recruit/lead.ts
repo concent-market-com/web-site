@@ -15,5 +15,5 @@ export const lead = (): Message => ({
 「パンが好き」「つくるのが好き」「人と話すのが好き」、ひとつでも当てはまったら、きっとここでの毎日は、あなたにぴったりです。
 経験者も未経験者も、まずは気軽にお話ししましょう！
     `,
-  images: GeneratedImages.find((image) => Object.keys(image)[0] === 'shukugawaPaths')!.shukugawaPaths!,
+  images: GeneratedImages.find((image) => Object.keys(image)[0] === 'recruitPaths')!.recruitPaths!,
 });
