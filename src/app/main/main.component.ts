@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal, DOCUMENT } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonIcon } from '@ionic/angular/standalone';
-import { DOCUMENT, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { ToParagraphPipe } from '../shared/to-paragraph.pipe';
 import { Meta } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
