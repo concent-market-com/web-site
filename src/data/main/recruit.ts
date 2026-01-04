@@ -54,7 +54,7 @@ export const recruit = (): Recruit => ({
       items: [
         { key: `職種`, value: `販売スタッフ / 製造補助スタッフ` },
         { key: `勤務地`, value: `夙川本店 / to table 宝塚店` },
-        { key: `給与`, value: `時給 1,130円〜` },
+        { key: `給与`, value: `時給 1,150円〜` },
         { key: `勤務時間`, value: `8:00〜19:00のうち、4～8時間程度` },
         { key: `待遇`, value: `交通費支給、制服貸与` },
         { key: `応募方法`, value: `お電話または上記メールフォームからご連絡ください。` },
