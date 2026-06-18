@@ -1,0 +1,62 @@
+[
+  {
+    "heroPaths": [
+      {
+        "height": 100,
+        "width": 100,
+        "type": "jpg",
+        "path": "/assets/images/stub.jpg",
+        "resize": {
+          "320": { "height": 50, "width": 320, "type": "jpg", "path": "/assets/images/stub_320.jpg" },
+          "1280": { "height": 100, "width": 1280, "type": "jpg", "path": "/assets/images/stub_1280.jpg" },
+          "1920": { "height": 150, "width": 1920, "type": "jpg", "path": "/assets/images/stub_1920.jpg" }
+        }
+      }
+    ]
+  },
+  {
+    "recruitPaths": [
+      {
+        "height": 100,
+        "width": 100,
+        "type": "jpg",
+        "path": "/assets/images/stub.jpg",
+        "resize": {
+          "320": { "height": 50, "width": 320, "type": "jpg", "path": "/assets/images/stub_320.jpg" },
+          "1280": { "height": 100, "width": 1280, "type": "jpg", "path": "/assets/images/stub_1280.jpg" },
+          "1920": { "height": 150, "width": 1920, "type": "jpg", "path": "/assets/images/stub_1920.jpg" }
+        }
+      }
+    ]
+  },
+  {
+    "shukugawaPaths": [
+      {
+        "height": 100,
+        "width": 100,
+        "type": "jpg",
+        "path": "/assets/images/stub.jpg",
+        "resize": {
+          "320": { "height": 50, "width": 320, "type": "jpg", "path": "/assets/images/stub_320.jpg" },
+          "1280": { "height": 100, "width": 1280, "type": "jpg", "path": "/assets/images/stub_1280.jpg" },
+          "1920": { "height": 150, "width": 1920, "type": "jpg", "path": "/assets/images/stub_1920.jpg" }
+        }
+      }
+    ]
+  },
+  {
+    "takarazukaPaths": [
+      {
+        "height": 100,
+        "width": 100,
+        "type": "jpg",
+        "path": "/assets/images/stub.jpg",
+        "resize": {
+          "320": { "height": 50, "width": 320, "type": "jpg", "path": "/assets/images/stub_320.jpg" },
+          "1280": { "height": 100, "width": 1280, "type": "jpg", "path": "/assets/images/stub_1280.jpg" },
+          "1920": { "height": 150, "width": 1920, "type": "jpg", "path": "/assets/images/stub_1920.jpg" }
+        }
+      }
+    ]
+  }
+]
