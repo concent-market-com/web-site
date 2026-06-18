@@ -1,23 +1,23 @@
-export type Message = {
+export interface Message {
   title: string;
   lead: string;
   message: string;
   images: GeneratedImageType[];
-};
+}
 
-export type Messages = {
+export interface Messages {
   shukigawa: Message;
   takarazuka: Message;
-};
+}
 
-export type ContactModel = {
+export interface ContactModel {
   name: string;
   email: string;
   tel: string;
   message: string;
-};
+}
 
-export type Recruit = {
+export interface Recruit {
   message: string;
   messages: {
     title: string;
@@ -31,7 +31,7 @@ export type Recruit = {
       value: string;
     }[];
   }[];
-};
+}
 
 // endpoint: https://api.v5.tipsys.me/thirdparty/concent/mail
 export interface IRequestRdlaboMail {
@@ -40,18 +40,19 @@ export interface IRequestRdlaboMail {
   message: string;
 }
 
-export type GeneratedImageType = {
+export interface GeneratedImageType {
   height: number;
   orientation?: number;
   width: number;
   type: string;
   path: string;
-  resize: {
-    [width: number]: {
+  resize: Record<
+    number,
+    {
       height: number;
       width: number;
       type: string;
       path: string;
-    };
-  };
-};
+    }
+  >;
+}

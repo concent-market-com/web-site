@@ -1,4 +1,4 @@
-import { Component, inject, signal, DOCUMENT } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, DOCUMENT, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonIcon } from '@ionic/angular/standalone';
 import { NgOptimizedImage } from '@angular/common';
@@ -31,8 +31,9 @@ import { contact } from '../../data/recruit/contact';
   imports: [FormsModule, IonIcon, NgOptimizedImage, ReactiveFormsModule, ToParagraphPipe],
   templateUrl: './recruit.component.html',
   styleUrl: './recruit.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecruitComponent {
+export class RecruitComponent implements OnInit {
   private document = inject(DOCUMENT);
   private meta = inject(Meta);
   private http = inject(HttpClient);
@@ -121,7 +122,7 @@ export class RecruitComponent {
   }
 
   readyPrerender(meta: { title: string; description: string; image?: string }): void {
-    const domain: string = 'https://concent-market.com';
+    const domain = 'https://concent-market.com';
     this.meta.removeTag('name=description');
     this.meta.removeTag('name="twitter:title"');
     this.meta.removeTag('name="twitter:description"');
