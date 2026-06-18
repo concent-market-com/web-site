@@ -83,14 +83,18 @@
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "polyfills": [],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": ["src/assets", "src/robots.txt", "src/sitemap.xml"],
-            "styles": ["src/theme/reset.scss", "src/theme/styles.scss"],
-            "scripts": []
+            "buildTarget": "concent-market:build",
+            "runner": "vitest",
+            "runnerConfig": "vitest.config.ts",
+            "coverage": false
+          },
+          "configurations": {
+            "ci": {
+              "watch": false
+            }
           }
         },
         "lint": {
