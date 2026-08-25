@@ -10,7 +10,6 @@ import { defaultContactModel } from '../../config/constant';
 import GeneratedImages from '../../assets/generated/images.json';
 import { lead } from '../../data/recruit/lead';
 import { takarazuka } from '../../data/recruit/takarazuka';
-import { addIcons } from 'ionicons';
 import {
   bagOutline,
   bookmarkOutline,
@@ -40,6 +39,18 @@ export class RecruitComponent implements OnInit {
 
   public contactModel: ContactModel = defaultContactModel();
 
+  readonly icons = {
+    bagOutline,
+    bookmarkOutline,
+    callOutline,
+    caretDownOutline,
+    lockClosedOutline,
+    logoFacebook,
+    logoInstagram,
+    mapOutline,
+    timeOutline,
+  };
+
   heroImagePath = signal<GeneratedImageType>(
     GeneratedImages.find((image) => Object.keys(image)[0] === 'heroPaths')!.heroPaths![0]!,
   );
@@ -54,20 +65,6 @@ export class RecruitComponent implements OnInit {
   recruit = signal<Recruit>(recruit());
   contact = signal<string[]>(contact());
   isSend = signal<boolean>(false);
-
-  constructor() {
-    addIcons({
-      logoInstagram,
-      logoFacebook,
-      callOutline,
-      timeOutline,
-      lockClosedOutline,
-      mapOutline,
-      caretDownOutline,
-      bagOutline,
-      bookmarkOutline,
-    });
-  }
 
   ngOnInit() {
     this.readyPrerender({

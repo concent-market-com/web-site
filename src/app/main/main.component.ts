@@ -9,7 +9,6 @@ import { ContactModel, GeneratedImageType, IRequestRdlaboMail, Messages, Recruit
 import GeneratedImages from '../../assets/generated/images.json';
 import { shukugawa } from '../../data/main/shukugawa';
 import { takarazuka } from '../../data/main/takarazuka';
-import { addIcons } from 'ionicons';
 import {
   bagOutline,
   bookmarkOutline,
@@ -40,6 +39,18 @@ export class MainComponent implements OnInit {
 
   public contactModel: ContactModel = defaultContactModel();
 
+  readonly icons = {
+    bagOutline,
+    bookmarkOutline,
+    callOutline,
+    caretDownOutline,
+    lockClosedOutline,
+    logoFacebook,
+    logoInstagram,
+    mapOutline,
+    timeOutline,
+  };
+
   heroImagePath = signal<GeneratedImageType>(
     GeneratedImages.find((image) => Object.keys(image)[0] === 'heroPaths')!.heroPaths![0]!,
   );
@@ -57,20 +68,6 @@ export class MainComponent implements OnInit {
   recruit = signal<Recruit>(recruit());
   contact = signal<string[]>(contact());
   isSend = signal<boolean>(false);
-
-  constructor() {
-    addIcons({
-      logoInstagram,
-      logoFacebook,
-      callOutline,
-      timeOutline,
-      lockClosedOutline,
-      mapOutline,
-      caretDownOutline,
-      bagOutline,
-      bookmarkOutline,
-    });
-  }
 
   ngOnInit() {
     this.readyPrerender({
